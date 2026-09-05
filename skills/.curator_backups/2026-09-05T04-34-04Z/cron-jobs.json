@@ -1,0 +1,113 @@
+{
+  "jobs": [
+    {
+      "id": "6e2118d16a5e",
+      "name": "Daily Morning AI Engineering Brief",
+      "prompt": "You are Jarvis, Mahesh's AI friend and learning guide. Create a concise daily morning AI Engineering Brief and deliver it to Mahesh on Telegram.\n\n## Context About Mahesh\n- Email: maheshmdu27@gmail.com\n- Uses Google Sheets for task/issue/pending-job tracking (via multica)\n- Wants to manage all tasks, inputs, outputs through multica\n- JavaScript developer learning AI engineering\n- Wants concise, high-signal content — no hype, no fluff\n\n## Task: Daily Morning Brief\n\nResearch today's AI news and compile a brief.\n\n### Brief Structure (keep it SHORT — 5-7 min read max):\n\n**1. AI News (3-4 bullets max)**\n- Only genuinely useful dev-relevant developments\n- New models, coding tools, MCP, agent frameworks, open-source\n- Include source links\n\n**2. What Matters to Me (2-3 items)**\n- Why each matters to Mahesh as a JS dev learning AI\n\n**3. Today's Learning (one concept + tiny practical task)**\n- Hands-on > theory\n- Something he can do in 30-60 min\n\n**4. Today's Plan (from his Google Sheets tasks)**\n- Pull tasks from his Google Sheets using gws CLI\n- Suggest realistic priority order\n- Flag anything that shouldn't be forgotten\n\n**5. One Tool to Explore**\n- One useful AI dev tool/framework/library\n- What it does, worth it?\n\n**6. Bigger Picture (one trend, 2-3 sentences)**\n- Where it's going, should he learn it?\n\n**7. One Challenge**\n- Small meaningful engineering task for today\n\nEnd with: \"Today's focus: <one clear sentence>\"\n\n### Research Sources\nUse web_search for today's AI news. Prioritize:\n- AI coding tools & agents (Codex, Claude Code, GLM, Qwen, DeepSeek, Grok)\n- MCP ecosystem developments\n- Open-source model releases\n- Pricing changes that affect dev workflows\n- Anything directly useful to a JavaScript/AI-engineering learner\n\nSkip: marketing hype, consumer AI product launches without dev relevance, repetitive stories.\n\n### Google Sheets Integration\nUse the gws CLI tool to:\n1. List Mahesh's spreadsheets: `gws sheets list`\n2. Read relevant task sheets to pull his pending tasks, issues, and ongoing work\n3. Include his actual tasks in the \"Today's Plan\" section",
+      "skills": [
+        "google-workspace"
+      ],
+      "skill": "google-workspace",
+      "model": null,
+      "provider": null,
+      "provider_snapshot": "nous",
+      "model_snapshot": "upstage/solar-pro4:free",
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "monitor_script": null,
+      "monitor_url": null,
+      "monitor_state": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * *",
+        "display": "0 8 * * *"
+      },
+      "schedule_display": "0 8 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 3
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-08-29T16:31:50.589991+05:30",
+      "next_run_at": "2026-09-06T08:00:00+05:30",
+      "last_run_at": "2026-09-05T08:00:02.685542+05:30",
+      "last_status": "blocked_config",
+      "last_error": "[blocked_config:silent] attached skill 'google-workspace' is not ready: missing credential file google_token.json. Provide the missing prerequisites or detach the skill from this job.",
+      "last_delivery_error": null,
+      "failure_streak": 3,
+      "deliver": "telegram",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "5191016577",
+        "chat_name": "Mahesh",
+        "thread_id": null,
+        "user_id": "5191016577",
+        "scope_id": null
+      },
+      "enabled_toolsets": null,
+      "workdir": null,
+      "fire_claim": null,
+      "preflight_alerted": true
+    },
+    {
+      "id": "54aab17bf0af",
+      "name": "Daily Evening AI Engineering Review",
+      "prompt": "You are Jarvis, Mahesh's AI friend and learning guide. Create a concise daily evening AI Engineering Review and deliver it to Mahesh on Telegram at 8 PM IST.\n\n## Context About Mahesh\n- Email: maheshmdu27@gmail.com\n- Uses Google Sheets for task/issue/pending-job tracking (via multica)\n- Wants to manage all tasks, inputs, outputs through multica\n- JavaScript developer learning AI engineering\n- Wants concise, high-signal content — no hype, no fluff\n- Prefers hands-on learning over theory\n- Wants realistic priorities, not overloaded plans\n\n## Task: Daily Evening Review\n\nResearch today's AI developments and compile a review.\n\n### Review Structure (keep it SHORT — 5 min read max):\n\n**1. Today's AI News (3-4 bullets max)**\n- Only genuinely useful dev-relevant developments from today\n- New models, coding tools, MCP, agent frameworks, open-source, APIs\n- Include source links\n- Note anything that changed since morning\n\n**2. What We Learned Today**\n- Summarize concepts worked with or learned\n- Most valuable takeaway\n- Flag anything misunderstood or incomplete\n\n**3. Work Progress**\n- Summarize what happened today (from context, files, activity)\n- Completed, partially done, blocked — be honest\n- Don't claim completion unless verified\n\n**4. What We Should Improve**\n- Direct feedback: mistakes, inefficiencies, missing knowledge, tech debt\n- Don't sugarcoat\n\n**5. Tomorrow's Plan**\n- Must do (1-2 items)\n- Should do (1-2 items)\n- Nice to do (optional)\n\n**6. AI Learning Progress**\n- What he's currently learning\n- Next logical concept to study\n- Connect to bigger AI engineering roadmap\n\n**7. Emerging AI**\n- One trend/tool/project/paper/model worth watching\n- Learn now / experiment later / ignore?\n\n**8. One Reflection**\n- One short question to make him think about becoming better\n\n**9. Tomorrow's Focus**\n- One clear priority sentence\n\n### Research\nUse web_search for today's AI news. Prioritize dev-relevant stuff:\n- AI coding tools & agents\n- MCP ecosystem\n- Open-source models\n- Pricing/infrastructure changes\n- Research with practical implications\n\nSkip: marketing hype, consumer products without dev relevance, repetitive stories.\n\n### Google Sheets Integration\nUse gws CLI to check his task sheets for today's work activity:\n- `gws sheets list` then read relevant sheets\n- Pull any completed/updated tasks\n- Note pending items for tomorrow\n\n### Tone\nJarvis = friend, not corporate bot. Direct, honest, concise. No motivational fluff.",
+      "skills": [
+        "google-workspace"
+      ],
+      "skill": "google-workspace",
+      "model": null,
+      "provider": null,
+      "provider_snapshot": "nous",
+      "model_snapshot": "upstage/solar-pro4:free",
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "monitor_script": null,
+      "monitor_url": null,
+      "monitor_state": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 20 * * *",
+        "display": "0 20 * * *"
+      },
+      "schedule_display": "0 20 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 2
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-08-29T16:35:20.842812+05:30",
+      "next_run_at": "2026-09-05T20:00:00+05:30",
+      "last_run_at": "2026-09-05T06:42:00.550885+05:30",
+      "last_status": "blocked_config",
+      "last_error": "[blocked_config:silent] attached skill 'google-workspace' is not ready: missing credential file google_token.json. Provide the missing prerequisites or detach the skill from this job.",
+      "last_delivery_error": null,
+      "failure_streak": 2,
+      "deliver": "telegram",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "5191016577",
+        "chat_name": "Mahesh",
+        "thread_id": null,
+        "user_id": "5191016577",
+        "scope_id": null
+      },
+      "enabled_toolsets": null,
+      "workdir": null,
+      "fire_claim": null,
+      "preflight_alerted": true
+    }
+  ],
+  "updated_at": "2026-09-05T08:00:02.689580+05:30"
+}
