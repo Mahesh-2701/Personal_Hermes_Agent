@@ -1,0 +1,24 @@
+export:
+  name: hermes-agent-setup
+  version: "1.0.0"
+  description: "Portable Hermes Agent environment"
+
+agent:
+  soul: "identity/SOUL.md"
+
+memory:
+  included: "portable"
+  status: "exported"
+
+skills:
+  status: "manifest-created"
+
+mcp:
+  status: "manifest-created"
+
+dependencies:
+  status: "documented"
+
+security:
+  secrets_removed: true
+  secret_scan_performed: true

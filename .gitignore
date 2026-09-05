@@ -1,0 +1,20 @@
+
+# Secrets
+.env
+*.key
+*.token
+*.pem
+
+# Machine-specific state
+__pycache__/
+*.pyc
+.DS_Store
+.vscode/
+.idea/
+
+# Environment/Build artifacts
+node_modules/
+venv/
+.venv/
+.temp/
+*.log
