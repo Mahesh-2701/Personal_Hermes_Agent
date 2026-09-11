@@ -1,0 +1,3312 @@
+metadata:
+  version: '1.0'
+  generated_at: '2026-09-11T11:10:28.305132Z'
+  total_skills: 147
+  total_categories: 26
+  portable_skills: 63
+  environment_specific_skills: 71
+  skills_with_dependencies: 125
+  skills_with_mcp: 9
+categories:
+  addyosmani:
+    total_skills: 1
+    portable_skills: 1
+    environment_specific: 0
+    skills_with_dependencies: 0
+    skills_with_mcp: 0
+  ai-engineering:
+    total_skills: 1
+    portable_skills: 1
+    environment_specific: 0
+    skills_with_dependencies: 0
+    skills_with_mcp: 0
+  apple:
+    total_skills: 1
+    portable_skills: 1
+    environment_specific: 0
+    skills_with_dependencies: 0
+    skills_with_mcp: 0
+  autonomous-ai-agents:
+    total_skills: 1
+    portable_skills: 1
+    environment_specific: 0
+    skills_with_dependencies: 0
+    skills_with_mcp: 0
+  basecamp-integration:
+    total_skills: 1
+    portable_skills: 0
+    environment_specific: 1
+    skills_with_dependencies: 1
+    skills_with_mcp: 1
+  creative:
+    total_skills: 1
+    portable_skills: 1
+    environment_specific: 0
+    skills_with_dependencies: 0
+    skills_with_mcp: 0
+  crm-analytics:
+    total_skills: 3
+    portable_skills: 1
+    environment_specific: 2
+    skills_with_dependencies: 2
+    skills_with_mcp: 2
+  cybersecurity:
+    total_skills: 1
+    portable_skills: 1
+    environment_specific: 0
+    skills_with_dependencies: 0
+    skills_with_mcp: 0
+  devops:
+    total_skills: 1
+    portable_skills: 1
+    environment_specific: 0
+    skills_with_dependencies: 0
+    skills_with_mcp: 0
+  email:
+    total_skills: 1
+    portable_skills: 1
+    environment_specific: 0
+    skills_with_dependencies: 0
+    skills_with_mcp: 0
+  fullstack-development:
+    total_skills: 1
+    portable_skills: 1
+    environment_specific: 0
+    skills_with_dependencies: 0
+    skills_with_mcp: 0
+  github:
+    total_skills: 2
+    portable_skills: 1
+    environment_specific: 1
+    skills_with_dependencies: 1
+    skills_with_mcp: 1
+  media:
+    total_skills: 1
+    portable_skills: 1
+    environment_specific: 0
+    skills_with_dependencies: 0
+    skills_with_mcp: 0
+  mlops:
+    total_skills: 1
+    portable_skills: 1
+    environment_specific: 0
+    skills_with_dependencies: 0
+    skills_with_mcp: 0
+  multi-bot-gateway:
+    total_skills: 1
+    portable_skills: 0
+    environment_specific: 0
+    skills_with_dependencies: 1
+    skills_with_mcp: 0
+  n8n-automation:
+    total_skills: 1
+    portable_skills: 0
+    environment_specific: 1
+    skills_with_dependencies: 1
+    skills_with_mcp: 1
+  note-taking:
+    total_skills: 1
+    portable_skills: 1
+    environment_specific: 0
+    skills_with_dependencies: 0
+    skills_with_mcp: 0
+  oh-my-hermes:
+    total_skills: 111
+    portable_skills: 39
+    environment_specific: 64
+    skills_with_dependencies: 110
+    skills_with_mcp: 4
+  productivity:
+    total_skills: 1
+    portable_skills: 1
+    environment_specific: 0
+    skills_with_dependencies: 0
+    skills_with_mcp: 0
+  research:
+    total_skills: 1
+    portable_skills: 1
+    environment_specific: 0
+    skills_with_dependencies: 0
+    skills_with_mcp: 0
+  smart-home:
+    total_skills: 1
+    portable_skills: 1
+    environment_specific: 0
+    skills_with_dependencies: 0
+    skills_with_mcp: 0
+  social-media:
+    total_skills: 1
+    portable_skills: 1
+    environment_specific: 0
+    skills_with_dependencies: 0
+    skills_with_mcp: 0
+  software-development:
+    total_skills: 1
+    portable_skills: 1
+    environment_specific: 0
+    skills_with_dependencies: 0
+    skills_with_mcp: 0
+  testing:
+    total_skills: 1
+    portable_skills: 1
+    environment_specific: 0
+    skills_with_dependencies: 0
+    skills_with_mcp: 0
+  ultraloop-workflows:
+    total_skills: 9
+    portable_skills: 3
+    environment_specific: 2
+    skills_with_dependencies: 9
+    skills_with_mcp: 0
+  web:
+    total_skills: 1
+    portable_skills: 1
+    environment_specific: 0
+    skills_with_dependencies: 0
+    skills_with_mcp: 0
+skills:
+  addyosmani:
+  - name: addyosmani
+    category: addyosmani
+    description: No description
+    trigger: ''
+    portable: true
+    environment_specific: false
+    dependencies: []
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - idea-refine
+    - debugging-and-error-recovery
+    - using-agent-skills
+    - test-driven-development
+    - planning-and-task-breakdown
+  ai-engineering:
+  - name: ai-engineering
+    category: ai-engineering
+    description: No description
+    trigger: ''
+    portable: true
+    environment_specific: false
+    dependencies: []
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - ai-engineering
+  apple:
+  - name: apple
+    category: apple
+    description: No description
+    trigger: ''
+    portable: true
+    environment_specific: false
+    dependencies: []
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - apple-reminders
+    - DESCRIPTION.md
+    - imessage
+    - findmy
+    - apple-notes
+  autonomous-ai-agents:
+  - name: autonomous-ai-agents
+    category: autonomous-ai-agents
+    description: No description
+    trigger: ''
+    portable: true
+    environment_specific: false
+    dependencies: []
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - claude-code
+    - verifying-delegated-code-work
+    - external-platform-integration
+    - codex
+    - DESCRIPTION.md
+  basecamp-integration:
+  - name: basecamp-integration
+    category: basecamp-integration
+    description: Use when connecting Hermes to Basecamp via CLI (bc) and/or MCP server. Covers initial read-only configuration,
+      token setup, verifying connectivity, and later upgrading to full access. Always confirms the user's Basecamp account/company
+      slug before writing any config. Never stores tokens in plaintext
+    trigger: Use when connecting Hermes to Basecamp via CLI (bc) and/or MCP server. Covers initial read-only conf
+    portable: false
+    environment_specific: true
+    dependencies:
+    - '403'
+    - Hermes-Read
+    - list
+    mcp_requirements:
+    - client
+    - config
+    - env
+    - import
+    - server
+    - servers
+    - setup
+    - starts
+    - tool
+    - via
+    - wrapper
+    has_supporting_files: false
+    supporting_files: []
+  creative:
+  - name: creative
+    category: creative
+    description: No description
+    trigger: ''
+    portable: true
+    environment_specific: false
+    dependencies: []
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - stichdesign
+    - comfyui
+    - baoyu-infographic
+    - songwriting-and-ai-music
+    - ascii-video
+  crm-analytics:
+  - name: crm-analytics-report
+    category: crm-analytics
+    description: No description
+    trigger: ''
+    portable: true
+    environment_specific: false
+    dependencies: []
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - README.md
+    - scripts
+  - name: zoho-crm-chat
+    category: crm-analytics
+    description: "Use when Mahesh asks about Zoho CRM data in chat \u2014 leads, deals, tasks, contacts, accounts. Translates\
+      \ natural chat requests into the right zoho_crm_mcp tool calls and reports back in plain summary."
+    trigger: "Use when Mahesh asks about Zoho CRM data in chat \u2014 leads, deals, tasks, contacts, accounts. Translat"
+    portable: false
+    environment_specific: true
+    dependencies:
+    - zoho-crm-mcp
+    - zoho_crm_get_contact
+    - zoho_crm_get_module
+    - zoho_crm_get_record
+    - zoho_crm_list_accounts
+    - zoho_crm_list_contacts
+    - zoho_crm_list_deals
+    - zoho_crm_list_leads
+    - zoho_crm_list_tasks
+    - zoho_crm_search
+    mcp_requirements:
+    - server
+    - tool
+    has_supporting_files: false
+    supporting_files: []
+  - name: zoho-crm-mcp
+    category: crm-analytics
+    description: Use when connecting Zoho CRM to Hermes via MCP. Covers setup, OAuth token generation, read-only config, and
+      available tools.
+    trigger: Use when connecting Zoho CRM to Hermes via MCP. Covers setup, OAuth token generation, read-only conf
+    portable: false
+    environment_specific: true
+    dependencies:
+    - mcp_zoho_crm_get_account
+    - mcp_zoho_crm_get_contact
+    - mcp_zoho_crm_get_deal
+    - mcp_zoho_crm_get_task
+    - mcp_zoho_crm_list_accounts
+    - mcp_zoho_crm_list_contacts
+    - mcp_zoho_crm_list_deals
+    - mcp_zoho_crm_list_tasks
+    - mcp_zoho_crm_list_users
+    - mcp_zoho_crm_search
+    mcp_requirements:
+    - description
+    - for
+    - reads
+    - servers
+    - tool
+    - tools
+    - zoho_crm
+    has_supporting_files: false
+    supporting_files: []
+  cybersecurity:
+  - name: cybersecurity
+    category: cybersecurity
+    description: No description
+    trigger: ''
+    portable: true
+    environment_specific: false
+    dependencies: []
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - implementing-gcp-binary-authorization
+    - implementing-pam-for-database-access
+    - implementing-identity-verification-for-zero-trust
+    - performing-malware-hash-enrichment-with-virustotal
+    - analyzing-cobaltstrike-malleable-c2-profiles
+  devops:
+  - name: devops
+    category: devops
+    description: No description
+    trigger: ''
+    portable: true
+    environment_specific: false
+    dependencies: []
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - sdlc-review
+  email:
+  - name: email
+    category: email
+    description: No description
+    trigger: ''
+    portable: true
+    environment_specific: false
+    dependencies: []
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - himalaya
+    - DESCRIPTION.md
+    - email-inbox-triage
+  fullstack-development:
+  - name: fullstack-development
+    category: fullstack-development
+    description: No description
+    trigger: ''
+    portable: true
+    environment_specific: false
+    dependencies: []
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - fullstack-development
+  github:
+  - name: github
+    category: github
+    description: No description
+    trigger: ''
+    portable: true
+    environment_specific: false
+    dependencies: []
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - github-auth
+    - github-repo-management
+    - github-pr-workflow
+    - github-issue-to-pr
+    - DESCRIPTION.md
+  - name: hermes-github-backup
+    category: github
+    description: Use when backing up, validating, exporting, syncing, or restoring the Hermes Agent configuration to/from
+      a GitHub repository.
+    trigger: Use when backing up, validating, exporting, syncing, or restoring the Hermes Agent configuration to/
+    portable: false
+    environment_specific: true
+    dependencies:
+    - --dry-run
+    - .env
+    - .env.example
+    - GITHUB_PERSONAL_ACCESS_TOKEN
+    - HERMES_BACKUP_REPO
+    - auth.json
+    - config.yaml
+    - google_client_secret.json
+    - google_token.json
+    - 'yes'
+    mcp_requirements:
+    - Server
+    - and
+    - configuration
+    - count
+    - directly
+    - endpoints
+    - server
+    - servers
+    - tools
+    has_supporting_files: false
+    supporting_files: []
+  media:
+  - name: media
+    category: media
+    description: No description
+    trigger: ''
+    portable: true
+    environment_specific: false
+    dependencies: []
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - youtube-content
+    - DESCRIPTION.md
+    - songsee
+    - gif-search
+  mlops:
+  - name: mlops
+    category: mlops
+    description: No description
+    trigger: ''
+    portable: true
+    environment_specific: false
+    dependencies: []
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - huggingface-hub
+    - models
+    - DESCRIPTION.md
+    - inference
+    - evaluation
+  multi-bot-gateway:
+  - name: multi-bot-gateway
+    category: multi-bot-gateway
+    description: Launch multiple per-bot Telegram gateway instances.
+    trigger: Launch multiple per-bot Telegram gateway instances
+    portable: false
+    environment_specific: false
+    dependencies:
+    - HERMES_CMO_TELEGRAM_TOKEN
+    - HERMES_HOME
+    - TELEGRAM_ALLOWED_USERS
+    - TELEGRAM_BOT_TOKEN
+    - auth.json
+    - bot_id
+    - identities.yaml
+    - permissions.yaml
+    - roles.yaml
+    - telegram_bots.yaml
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+    - scripts
+  n8n-automation:
+  - name: n8n-automation
+    category: n8n-automation
+    description: "Create, inspect, activate, and debug n8n workflows through Hermes \u2014 via the n8n MCP bridge or direct\
+      \ API calls. Covers credential setup, workflow CRUD, common failures, and debugging paths."
+    trigger: "Create, inspect, activate, and debug n8n workflows through Hermes \u2014 via the n8n MCP bridge or direct"
+    portable: false
+    environment_specific: true
+    dependencies:
+    - .env
+    - N8N_API_KEY
+    - N8N_BASE_URL
+    - X-N8N-API-KEY
+    - eyJ...
+    - hermes-n8n-mcp
+    - mcp
+    - n8n
+    - public-api
+    - user_api_keys
+    mcp_requirements:
+    - The
+    - actually
+    - bridge
+    - connectivity
+    - entry
+    - env
+    - import
+    - loads
+    - server
+    - still
+    has_supporting_files: false
+    supporting_files: []
+  note-taking:
+  - name: note-taking
+    category: note-taking
+    description: No description
+    trigger: ''
+    portable: true
+    environment_specific: false
+    dependencies: []
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - DESCRIPTION.md
+    - obsidian
+  oh-my-hermes:
+  - name: oh-my-hermes
+    category: oh-my-hermes
+    description: No description
+    trigger: ''
+    portable: true
+    environment_specific: false
+    dependencies: []
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - omh-people-ops
+    - ulw-work
+    - omh-agent-evaluation
+    - omh-ask
+    - ulw-research
+  - name: omh-accessibility-audit
+    category: oh-my-hermes
+    description: '[omh] Hermes Accessibility Audit workflow: prepare WCAG, keyboard, focus, screen-reader, target-size, and
+      reflow evidence gates for UI surfaces. Use when the user says: accessibility-audit, accessibility audit, a11y audit,
+      a11y architect, wcag audit, wcag 2.2, wcag 2.2 aa, accessibility pass.'
+    trigger: '[omh] Hermes Accessibility Audit workflow: prepare WCAG, keyboard, focus, screen-reader, target-size'
+    portable: false
+    environment_specific: false
+    dependencies:
+    - accessibility-audit
+    - apple-design
+    - award-bar-score
+    - content-operator
+    - design-orchestration
+    - design-quality-gate
+    - frontend
+    - oh-my-hermes
+    - screenreader
+    - visual-qa
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-achievements
+    category: oh-my-hermes
+    description: '[omh] Hermes achievements observation workflow: summarize hermes-achievements badges, tiers, recent unlocks,
+      and progress from local plugin artifacts. Use when the user says: achievements, achievement, badges, badge, my badges,
+      show achievements, achievement summary, unlocked badges.'
+    trigger: '[omh] Hermes achievements observation workflow: summarize hermes-achievements badges, tiers, recent '
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - oh-my-hermes
+    - production-audit
+    - show_achievements_summary
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-adversarial-consensus
+    category: oh-my-hermes
+    description: '[omh] Hermes Adversarial Consensus workflow: independent perspectives attack a proposal, then distill into
+      a bundle a separate planner consumes. Use when the user says: adversarial-consensus, adversarial planning, adversarial
+      plan review, red team this plan, red-team this plan, red team the proposal'
+    trigger: '[omh] Hermes Adversarial Consensus workflow: independent perspectives attack a proposal, then distil'
+    portable: false
+    environment_specific: false
+    dependencies:
+    - adversarial-consensus
+    - code-review
+    - codebase-onboarding
+    - context
+    - deep-interview
+    - meta-router
+    - oh-my-hermes
+    - plan
+    - ralplan
+    - ultraqa
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-agent-board
+    category: oh-my-hermes
+    description: '[omh] Hermes agent board workflow: coordinate multiple Hermes profiles or agents with task, handoff, heartbeat,
+      blocker, and completion states. Use when the user says: agent-board, agent board, kanban, multi-agent, multi agent,
+      multi agent board, multiple hermes agents, multiple hermes profiles.'
+    trigger: '[omh] Hermes agent board workflow: coordinate multiple Hermes profiles or agents with task, handoff,'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - oh-my-hermes
+    - prepare_agent_board_card
+    - production-audit
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-agent-debug
+    category: oh-my-hermes
+    description: '[omh] Agent Debug workflow: capture a stuck, looping, drifting, or repeatedly failing agent run, diagnose
+      the likely failure pattern, and prepare the smallest safe recovery action. Use when the user says: agent-debug, agent
+      debug, agent debugging, agent introspection, agent self-debug, self-debug, s'
+    trigger: '[omh] Agent Debug workflow: capture a stuck, looping, drifting, or repeatedly failing agent run, dia'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - agent-debug
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - prepare_agent_debug
+    - production-audit
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-agent-evaluation
+    category: oh-my-hermes
+    description: '[omh] Hermes Agent Evaluation workflow: compare executor or agent choices on reproducible tasks using quality,
+      cost, time, tool, and evidence metrics. Use when the user says: agent-evaluation, agent evaluation, agent eval, agent
+      benchmark, executor evaluation, executor benchmark, compare agents, com'
+    trigger: '[omh] Hermes Agent Evaluation workflow: compare executor or agent choices on reproducible tasks usin'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-evaluation
+    - automation-blueprint
+    - executor-runtime-readiness
+    - github-event-ops
+    - github-issue-intake
+    - production-audit
+    - ultraperf
+    - workflow-learning
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-agent-ops-review
+    category: oh-my-hermes
+    description: '[omh] Hermes agent ops review workflow: help managers inspect AI-agent progress, blockers, quality gates,
+      and throughput levers. Use when the user says: agent-ops-review, agent ops review, agent productivity, operator productivity,
+      manager view, quality dashboard, throughput review, agent work quali'
+    trigger: '[omh] Hermes agent ops review workflow: help managers inspect AI-agent progress, blockers, quality g'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - agent-ops-review
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - prepare_agent_ops_review
+    - production-audit
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-ai-slop-cleaner
+    category: oh-my-hermes
+    description: '[omh] Hermes AI slop cleaner workflow: delete AI-generated slop, dead code, and duplication while observable
+      behavior stays identical. Use when the user says: ai-slop-cleaner, cleanup, deslop, refactor, risky, behavior-preserving
+      refactor, risk analysis, refactor workflow.'
+    trigger: '[omh] Hermes AI slop cleaner workflow: delete AI-generated slop, dead code, and duplication while ob'
+    portable: false
+    environment_specific: false
+    dependencies:
+    - ai-slop-cleaner
+    - code-review
+    - cto-loop
+    - failure-signal-audit
+    - idea-to-deploy
+    - llm-app-dev
+    - maintenance
+    - ralplan
+    - refactor-plan
+    - ultrawork
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-apple-design
+    category: oh-my-hermes
+    description: '[omh] Hermes Apple design workflow: prepare native Apple UI or Apple marketing product-visual direction,
+      review, and improvement briefs with evidence-backed remediation handoffs. Use when the user says: apple-design, apple
+      design, apple ui design, apple hig, human interface guidelines, ios design gu'
+    trigger: '[omh] Hermes Apple design workflow: prepare native Apple UI or Apple marketing product-visual direct'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - accessibility-audit
+    - apple-design
+    - award-bar-score
+    - content-operator
+    - design-orchestration
+    - design-quality-gate
+    - frontend
+    - materials
+    - oh-my-hermes
+    - visual-qa
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-apps
+    category: oh-my-hermes
+    description: '[omh] External app actions - email, Slack, Discord, Notion, Linear, Jira, CRM, and similar providers, scoped
+      with auth, payload, confirmation, and result-evidence gates. Use when the user says: connector-operator, connector operator,
+      external app action, external connector action, saas action, api a'
+    trigger: '[omh] External app actions - email, Slack, Discord, Notion, Linear, Jira, CRM, and similar providers'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - connector-operator
+    - github-event-ops
+    - github-issue-intake
+    - prepare_connector_operator_card
+    - production-audit
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-ask
+    category: oh-my-hermes
+    description: '[omh] Hermes adaptation for consulting an external advisor when configured. Use when the user says: ask,
+      external advisor, ask claude, ask gemini, consult claude, consult gemini, opinion from claude, opinion from gemini.'
+    trigger: '[omh] Hermes adaptation for consulting an external advisor when configured. Use when the user says: '
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - ask
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - production-audit
+    - review
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-automation-blueprint
+    category: oh-my-hermes
+    description: '[omh] Hermes Scheduled Ops Blueprint workflow: design recurring Hermes operations with schedule, delivery,
+      silence policy, context chain, and prepared-vs-observed status. Use when the user says: automation-blueprint, scheduled
+      ops, scheduled operation, scheduled operations, automation blueprint, cro'
+    trigger: '[omh] Hermes Scheduled Ops Blueprint workflow: design recurring Hermes operations with schedule, del'
+    portable: true
+    environment_specific: true
+    dependencies:
+    - achievements
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - materials-package
+    - production-audit
+    - reliability-review
+    - report-package
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-autoresearch-goal
+    category: oh-my-hermes
+    description: '[omh] Hermes adaptation for durable research-goal execution. Use when the user says: autoresearch-goal,
+      research goal, durable research, critic research.'
+    trigger: '[omh] Hermes adaptation for durable research-goal execution. Use when the user says: autoresearch-go'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - autoresearch-goal
+    - best-practice-research
+    - durable-research
+    - inference-serving
+    - model-optimization
+    - oh-my-hermes
+    - product-docs
+    - research
+    - source-finder
+    - web-research
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-award-bar-score
+    category: oh-my-hermes
+    description: '[omh] Hermes award-bar score workflow: score a web surface against published design-award judging axes and
+      name the binding constraint. Use when the user says: award-bar-score, award bar score, award winning, award-winning,
+      award winning website, award-winning website, award winning design, award re'
+    trigger: '[omh] Hermes award-bar score workflow: score a web surface against published design-award judging ax'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - accessibility-audit
+    - apple-design
+    - award-bar-score
+    - award-winning
+    - content-operator
+    - design-orchestration
+    - design-quality-gate
+    - frontend
+    - oh-my-hermes
+    - visual-qa
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-backend
+    category: oh-my-hermes
+    description: "[omh] Hermes backend workflow: prepare server, API, and data-layer contracts \u2014 auth boundary, error\
+      \ paths, response shape, and schema/migration discipline \u2014 before implementation. Use when the user says: backend,\
+      \ back-end, back end, backend skill, server side, server-side, api design, api contract."
+    trigger: "[omh] Hermes backend workflow: prepare server, API, and data-layer contracts \u2014 auth boundary, error "
+    portable: false
+    environment_specific: true
+    dependencies:
+    - backend
+    - cto-loop
+    - deploy-and-monitor
+    - frontend
+    - idea-to-deploy
+    - llm-app-dev
+    - rust
+    - security-safety-review
+    - unsafe
+    - verification-gate
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-best-practice-research
+    category: oh-my-hermes
+    description: '[omh] Hermes adaptation for bounded official/upstream best-practice research. Use when the user says: best-practice-research,
+      best practice, official docs, upstream guidance, what do the docs say, check the docs.'
+    trigger: '[omh] Hermes adaptation for bounded official/upstream best-practice research. Use when the user says'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - autoresearch-goal
+    - best-practice-research
+    - evidence
+    - inference-serving
+    - model-optimization
+    - oh-my-hermes
+    - product-docs
+    - research
+    - source-finder
+    - web-research
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-browser
+    category: oh-my-hermes
+    description: '[omh] Policy overlay for browser tasks - add auth, confirmation, and observed-trace gates after preferring
+      the native browser for ordinary URL, click, login, and form actions. Use when the user says: browser-operator, browser
+      operator, browser task, browser operation, browser automation, browser ses'
+    trigger: '[omh] Policy overlay for browser tasks - add auth, confirmation, and observed-trace gates after pref'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - browser-operator
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - prepare_browser_operator_card
+    - production-audit
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-build-failure-triage
+    category: oh-my-hermes
+    description: '[omh] Hermes Build Failure Triage workflow: classify build, typecheck, lint, test, CI, and DCO failures
+      into minimal safe fix handoffs. Use when the user says: build-failure-triage, build failure triage, build failure, build-failure,
+      build fix, build failed, build failing, compile error.'
+    trigger: '[omh] Hermes Build Failure Triage workflow: classify build, typecheck, lint, test, CI, and DCO failu'
+    portable: false
+    environment_specific: false
+    dependencies:
+    - build-failure-triage
+    - code-review
+    - cto-loop
+    - deploy-and-monitor
+    - idea-to-deploy
+    - llm-app-dev
+    - production-audit
+    - reliability-review
+    - security-safety-review
+    - verification-gate
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-buzz
+    category: oh-my-hermes
+    description: '[omh] Connect and operate Hermes as a native Buzz community agent, deliver local media with verified relay
+      receipts, or diagnose a self-hosted Buzz relay without inventing transport evidence. Aliases: omh-buzz. Use when the
+      user says: connect Hermes to Buzz, Buzz community agent, Buzz gateway setup,'
+    trigger: '[omh] Connect and operate Hermes as a native Buzz community agent, deliver local media with verified'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - oh-my-hermes
+    - omh-buzz
+    - production-audit
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-cancel
+    category: oh-my-hermes
+    description: '[omh] Hermes adaptation for ending active workflow state cleanly. Use when the user says: cancel, stop the
+      workflow, abort the run, cancel the loop.'
+    trigger: '[omh] Hermes adaptation for ending active workflow state cleanly. Use when the user says: cancel, st'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - cancel
+    - github-event-ops
+    - github-issue-intake
+    - operator
+    - production-audit
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-capability-toggle
+    category: oh-my-hermes
+    description: '[omh] Hermes adaptation for turning one OMH capability family on or off so an install can be tailored instead
+      of taken whole. Use when the user says: capability-toggle, capability policy, disable memory, enable memory, disable
+      coding orchestration, disable a capability family, enable a capability fa'
+    trigger: '[omh] Hermes adaptation for turning one OMH capability family on or off so an install can be tailore'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - capability-toggle
+    - github-event-ops
+    - github-issue-intake
+    - oh-my-hermes
+    - production-audit
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-code-review
+    category: oh-my-hermes
+    description: '[omh] Hermes Code Review workflow: bug-first review with evidence. Use when the user says: code-review,
+      review, audit, find bugs, release gate, claim audit, evidence audit, README claim.'
+    trigger: '[omh] Hermes Code Review workflow: bug-first review with evidence. Use when the user says: code-revi'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - build-failure-triage
+    - code-review
+    - cto-loop
+    - deploy-and-monitor
+    - idea-to-deploy
+    - llm-app-dev
+    - not_assessed
+    - oh-my-hermes
+    - security-safety-review
+    - verification-gate
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-codebase-onboarding
+    category: oh-my-hermes
+    description: '[omh] Hermes Codebase Onboarding workflow: create a repo map, reading path, glossary, risk map, and first-task
+      runway for unfamiliar codebases. Use when the user says: codebase-onboarding, codebase onboarding, repo onboarding,
+      repository onboarding, codebase tour, code tour, new repo orientation, un'
+    trigger: '[omh] Hermes Codebase Onboarding workflow: create a repo map, reading path, glossary, risk map, and '
+    portable: false
+    environment_specific: true
+    dependencies:
+    - code-review
+    - codebase-onboarding
+    - context
+    - deep-interview
+    - idea-to-deploy
+    - meta-router
+    - oh-my-hermes
+    - plan
+    - ultrawork
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-codebase-uml
+    category: oh-my-hermes
+    description: '[omh] OMH Codebase UML workflow: turn a repository into one readable, interface-level PlantUML architecture
+      picture - packages or modules, the public symbols other units actually import, bounded import edges - and get it rendered
+      to a single PNG a chat surface can show. Use when the user says: codeb'
+    trigger: '[omh] OMH Codebase UML workflow: turn a repository into one readable, interface-level PlantUML archi'
+    portable: true
+    environment_specific: true
+    dependencies:
+    - --depth
+    - --focus
+    - --max-nodes
+    - codebase-onboarding
+    - codebase-uml
+    - codegraph-refresh
+    - dot
+    - img-summary
+    - meta-router
+    - oh-my-hermes
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-codegraph-refresh
+    category: oh-my-hermes
+    description: '[omh] Hermes Codegraph Refresh workflow: refresh local code intelligence, summarize repo structure, and
+      prepare task-scoped codegraph handoff context without overclaiming execution. Use when the user says: codegraph-refresh,
+      codegraph refresh, refresh codegraph, update codegraph, codegraph stale, st'
+    trigger: '[omh] Hermes Codegraph Refresh workflow: refresh local code intelligence, summarize repo structure, '
+    portable: false
+    environment_specific: true
+    dependencies:
+    - codebase-onboarding
+    - codegraph-refresh
+    - context
+    - deep-interview
+    - design-quality-gate
+    - frontend
+    - meta-router
+    - oh-my-hermes
+    - ultrawork
+    - visual-qa
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-content-operator
+    category: oh-my-hermes
+    description: '[omh] Hermes content operator workflow: scope publish-ready writing, rewriting, summarization, translation,
+      release-note, newsletter, customer-copy, social-copy, README-copy, and email-draft work with audience, tone, style,
+      source, review, and hallucination gates. Use when the user says: content-ope'
+    trigger: '[omh] Hermes content operator workflow: scope publish-ready writing, rewriting, summarization, trans'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - accessibility-audit
+    - apple-design
+    - award-bar-score
+    - content-operator
+    - design-orchestration
+    - design-quality-gate
+    - frontend
+    - oh-my-hermes
+    - prepare_content_operator_card
+    - visual-qa
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-context-budget-review
+    category: oh-my-hermes
+    description: '[omh] Hermes Context Budget Review workflow: plan compact context, token/cost budgets, summarization checkpoints,
+      and overflow recovery before long agent work. Use when the user says: context-budget-review, context budget review,
+      context budget, token budget review, token budget, prompt budget, prom'
+    trigger: '[omh] Hermes Context Budget Review workflow: plan compact context, token/cost budgets, summarization'
+    portable: false
+    environment_specific: false
+    dependencies:
+    - achievements
+    - automation-blueprint
+    - buzz
+    - context-budget-review
+    - github-event-ops
+    - github-issue-intake
+    - loop
+    - ops-observability-card
+    - production-audit
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-cto-loop
+    category: oh-my-hermes
+    description: '[omh] Hermes CTO Loop workflow: roadmap, PM, technical tradeoffs, risk, delivery, release, and follow-up
+      operating cadence. Use when the user says: cto-loop, cto loop, cto, cto pm, pm dev qa security ops, roadmap technical
+      tradeoffs, technical tradeoff, delivery risk.'
+    trigger: '[omh] Hermes CTO Loop workflow: roadmap, PM, technical tradeoffs, risk, delivery, release, and follo'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - build-failure-triage
+    - code-review
+    - cto-loop
+    - deploy-and-monitor
+    - idea-to-deploy
+    - leadership
+    - llm-app-dev
+    - security-safety-review
+    - strategy-brief
+    - verification-gate
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-curriculum-design
+    category: oh-my-hermes
+    description: "[omh] Turn a learning goal into a teachable curriculum, assessment plan, and learner-ready sequence. Use\
+      \ when the user says: curriculum design, learning objectives, assessment plan, \uCEE4\uB9AC\uD058\uB7FC \uC124\uACC4\
+      , \uD559\uC2B5 \uBAA9\uD45C, \uD3C9\uAC00 \uACC4\uD68D."
+    trigger: '[omh] Turn a learning goal into a teachable curriculum, assessment plan, and learner-ready sequence'
+    portable: false
+    environment_specific: false
+    dependencies:
+    - best-practice-research
+    - connector-operator
+    - content-operator
+    - curriculum-design
+    - materials-package
+    - paper-learning
+    - product-docs
+    - research
+    - source-finder
+    - web-research
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-data-analysis
+    category: oh-my-hermes
+    description: '[omh] Hermes data analysis workflow: scope supplied data with provenance, causal-claim, and hallucination
+      guards. Use when the user says: data-analysis, data analysis, dataset analysis, csv analysis, json analysis, log analysis,
+      table analysis, analyze csv.'
+    trigger: '[omh] Hermes data analysis workflow: scope supplied data with provenance, causal-claim, and hallucin'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - autoresearch-goal
+    - best-practice-research
+    - data-analysis
+    - inference-serving
+    - model-optimization
+    - prepare_data_analysis_card
+    - product-docs
+    - research
+    - source-finder
+    - web-research
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-decide
+    category: oh-my-hermes
+    description: '[omh] Decide between options: tradeoffs, a recommendation, and a decision note you can act on. Use when
+      the user says: strategy-brief, strategy brief, strategy memo, product strategy, strategic options, decision note, leadership
+      strategy, next strategy.'
+    trigger: '[omh] Decide between options: tradeoffs, a recommendation, and a decision note you can act on. Use w'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - autoresearch-goal
+    - best-practice-research
+    - inference-serving
+    - model-optimization
+    - product-docs
+    - research
+    - source-finder
+    - strategy
+    - strategy-brief
+    - web-research
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-decision-recall
+    category: oh-my-hermes
+    description: "[omh] Recall scoped reviewed rejected decisions without elevating them to approved memory. Use when the\
+      \ user says: decision-recall, rejected decision recall, rejected decisions, why was this rejected, previously rejected\
+      \ alternative, \uAC70\uC808\uB41C \uACB0\uC815, \uAE30\uAC01\uB41C \uB300\uC548."
+    trigger: '[omh] Recall scoped reviewed rejected decisions without elevating them to approved memory. Use when '
+    portable: false
+    environment_specific: true
+    dependencies:
+    - decision-recall
+    - light
+    - memory
+    - memory-keeper
+    - memory-new
+    - memory-sync
+    - oh-my-hermes
+    - show_rejected_decision_recall
+    - wiki
+    - workflow-surface-gated
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-deliverable-package
+    category: oh-my-hermes
+    description: '[omh] Hermes deliverable package workflow: track PPT, PDF, XLSX, DOCX, HWP, Markdown, and attachments through
+      prepared, generated, QA, approved, and attached states. Use when the user says: deliverable-package, deliverable mode,
+      file attachment, attach file, attachment status, file delivery, file de'
+    trigger: '[omh] Hermes deliverable package workflow: track PPT, PDF, XLSX, DOCX, HWP, Markdown, and attachment'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - accessibility-audit
+    - apple-design
+    - award-bar-score
+    - content-operator
+    - deliverable-package
+    - design-orchestration
+    - design-quality-gate
+    - frontend
+    - prepare_deliverable_package
+    - visual-qa
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-deploy-and-monitor
+    category: oh-my-hermes
+    description: '[omh] Hermes Deploy-and-Monitor workflow: release checklist, deploy decision, health signals, rollback gate,
+      and post-deploy status. Use when the user says: deploy-and-monitor, deploy and monitor, deploy monitor, deployment monitoring,
+      release monitor, post deploy, post-deploy, rollback.'
+    trigger: '[omh] Hermes Deploy-and-Monitor workflow: release checklist, deploy decision, health signals, rollba'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - build-failure-triage
+    - code-review
+    - cto-loop
+    - deploy-and-monitor
+    - idea-to-deploy
+    - llm-app-dev
+    - monitoring
+    - oh-my-hermes
+    - security-safety-review
+    - verification-gate
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-design-orchestration
+    category: oh-my-hermes
+    description: "[omh] Hermes design orchestration workflow: prepare a bounded design direction, existing-lane composition,\
+      \ and executor-neutral handoff. Use when the user says: design-orchestration, design orchestration, design ownership,\
+      \ handle this product design, take on the design, \u30C7\u30B6\u30A4\u30F3\u3092\u4EFB\u305B\u308B, \u30C7\u30B6\u30A4\
+      \u30F3\u5168\u4F53\u3092\u4EFB\u305B, \u30D7\u30ED\u30C0\u30AF\u30C8\u30C7\u30B6\u30A4"
+    trigger: '[omh] Hermes design orchestration workflow: prepare a bounded design direction, existing-lane compos'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - accessibility-audit
+    - apple-design
+    - award-bar-score
+    - content-operator
+    - design-orchestration
+    - design-quality-gate
+    - frontend
+    - oh-my-hermes
+    - visual-qa
+    - "\u30C7\u30B6\u30A4\u30F3\u3092\u4EFB\u305B\u308B"
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-design-quality-gate
+    category: oh-my-hermes
+    description: '[omh] Hermes Design Quality Gate workflow: enforce superior content, design, layout, publishing, and visual
+      QA gates. Use when the user says: design-quality-gate, design quality gate, ui ux pro max, design pro max, frontend
+      pro max, visual qa pro, premium design, high quality design.'
+    trigger: '[omh] Hermes Design Quality Gate workflow: enforce superior content, design, layout, publishing, and'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - accessibility-audit
+    - apple-design
+    - award-bar-score
+    - deliverable-package
+    - design-orchestration
+    - design-quality-gate
+    - frontend
+    - img-summary
+    - materials-package
+    - visual-qa
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-docs
+    category: oh-my-hermes
+    description: '[omh] Current-source-first documentation for OMH itself: product identity, public capability catalog, model
+      routing, local state, and long-term memory. Use when the user says: product-docs, OMH documentation, oh-my-hermes documentation,
+      what is OMH, what is oh-my-hermes, how does OMH work, OMH capab'
+    trigger: '[omh] Current-source-first documentation for OMH itself: product identity, public capability catalog'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - .env
+    - current_local_install
+    - not_available
+    - not_observed
+    - omh-doctor
+    - omh-memory-sync
+    - omh-model-setup
+    - omh-skill
+    - public_product
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-doctor
+    category: oh-my-hermes
+    description: '[omh] Hermes adaptation for diagnosing oh-my-hermes installation health. Use when the user says: doctor,
+      diagnose omh, installation health.'
+    trigger: '[omh] Hermes adaptation for diagnosing oh-my-hermes installation health. Use when the user says: doc'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - doctor
+    - github-event-ops
+    - github-issue-intake
+    - oh-my-hermes
+    - production-audit
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-executor-runtime-readiness
+    category: oh-my-hermes
+    description: '[omh] Executor runtime readiness - compare Codex, Claude Code, Hermes coding, and oh-my runtimes by tools
+      and handoff mode; use external-connector-readiness for a named plugin or API, and toolbelt-readiness for the whole capability
+      inventory. Use when the user says: executor-runtime-readiness, execu'
+    trigger: '[omh] Executor runtime readiness - compare Codex, Claude Code, Hermes coding, and oh-my runtimes by '
+    portable: false
+    environment_specific: true
+    dependencies:
+    - build-failure-triage
+    - code-review
+    - cto-loop
+    - deploy-and-monitor
+    - executor-runtime-readiness
+    - idea-to-deploy
+    - llm-app-dev
+    - prepare_executor_runtime_readiness
+    - security-safety-review
+    - verification-gate
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-external-connector-readiness
+    category: oh-my-hermes
+    description: '[omh] External connector readiness - assess whether a named plugin, connector, API, data provider, or multimodal
+      route is safe, affordable, fresh, and observable; use executor-runtime-readiness for coding-owner choice and toolbelt-readiness
+      for missing capability inventory. Use when the user says: e'
+    trigger: '[omh] External connector readiness - assess whether a named plugin, connector, API, data provider, o'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - external-connector-readiness
+    - github-event-ops
+    - github-issue-intake
+    - prepare_external_connector_readiness
+    - production-audit
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-failure-signal-audit
+    category: oh-my-hermes
+    description: '[omh] Failure Signal Audit workflow: find swallowed errors, unsafe fallbacks, hidden UI/runtime failures,
+      and missing propagation before they become false green status. Use when the user says: failure-signal-audit, failure
+      signal audit, silent failure, silent failures, silent failure hunter, swallow'
+    trigger: '[omh] Failure Signal Audit workflow: find swallowed errors, unsafe fallbacks, hidden UI/runtime fail'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - failure-signal-audit
+    - github-event-ops
+    - github-issue-intake
+    - prepare_failure_signal_audit
+    - production-audit
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-feedback-triage
+    category: oh-my-hermes
+    description: '[omh] Hermes Feedback Triage workflow: cluster customer signals and choose the next workflow. Use when the
+      user says: feedback-triage, customer-feedback-triage, feedback triage, customer feedback, feedback cluster, bug or feature,
+      feature request triage, payment failure feedback.'
+    trigger: '[omh] Hermes Feedback Triage workflow: cluster customer signals and choose the next workflow. Use wh'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - autoresearch-goal
+    - best-practice-research
+    - feedback-triage
+    - inference-serving
+    - model-optimization
+    - oh-my-hermes
+    - product-docs
+    - research
+    - source-finder
+    - web-research
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-files
+    category: oh-my-hermes
+    description: '[omh] Policy overlay for local file tasks - add path scoping and destructive-action gates after preferring
+      native file tools for ordinary list, search, organize, copy, move, and rename actions. Use when the user says: workspace-file-operator,
+      workspace file operator, file operator, file operation, f'
+    trigger: '[omh] Policy overlay for local file tasks - add path scoping and destructive-action gates after pref'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - prepare_workspace_file_operator_card
+    - production-audit
+    - workspace-audit
+    - workspace-file-operator
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-finance-analysis
+    category: oh-my-hermes
+    description: "[omh] Turn finance and accounting inputs into a decision-ready variance, cash, and close-risk brief. Use\
+      \ when the user says: finance analysis, budget variance, budget vs actual, month-end close, \uC7AC\uBB34 \uBD84\uC11D\
+      , \uC608\uC0B0 \uB300\uBE44 \uC2E4\uC801, \uC6D4\uB9C8\uAC10."
+    trigger: '[omh] Turn finance and accounting inputs into a decision-ready variance, cash, and close-risk brief'
+    portable: false
+    environment_specific: false
+    dependencies:
+    - best-practice-research
+    - connector-operator
+    - data-analysis
+    - finance-analysis
+    - live-info-operator
+    - product-docs
+    - research
+    - source-finder
+    - strategy-brief
+    - web-research
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-frontend
+    category: oh-my-hermes
+    description: '[omh] Hermes frontend workflow: prepare design-system-driven web and terminal (TUI) UI creation, redesign,
+      polish, accessibility, performance, and visual QA handoffs. Use when the user says: frontend, front-end, front end,
+      frontend skill, web ui, ui ux, landing page, web app layout.'
+    trigger: '[omh] Hermes frontend workflow: prepare design-system-driven web and terminal (TUI) UI creation, red'
+    portable: false
+    environment_specific: false
+    dependencies:
+    - accessibility-audit
+    - apple-design
+    - award-bar-score
+    - deliverable-package
+    - design-orchestration
+    - design-quality-gate
+    - frontend
+    - img-summary
+    - materials-package
+    - visual-qa
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-frontend-refactor
+    category: oh-my-hermes
+    description: '[omh] Hermes frontend refactor workflow: behavior-preserving refactor of UI code - preview the full change
+      plan first, apply as a second explicit step, and work impact-ordered from state architecture down to naming polish.
+      Use when the user says: frontend-refactor, front-refactor, frontend refactor,'
+    trigger: '[omh] Hermes frontend refactor workflow: behavior-preserving refactor of UI code - preview the full '
+    portable: false
+    environment_specific: false
+    dependencies:
+    - ai-slop-cleaner
+    - code-review
+    - cto-loop
+    - deploy-and-monitor
+    - frontend
+    - frontend-refactor
+    - idea-to-deploy
+    - llm-app-dev
+    - ralplan
+    - refactor-plan
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-gateway-intent-card
+    category: oh-my-hermes
+    description: '[omh] Hermes gateway intent workflow: normalize Discord, Slack, Telegram, and other gateway sessions into
+      origin, thread, delivery, silent, attachment, and status-update policy. Use when the user says: gateway-intent-card,
+      gateway intent, discord thread, slack thread, telegram delivery, discord deli'
+    trigger: '[omh] Hermes gateway intent workflow: normalize Discord, Slack, Telegram, and other gateway sessions'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - gateway-intent-card
+    - github-event-ops
+    - github-issue-intake
+    - prepare_gateway_intent_card
+    - production-audit
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-github-event-ops
+    category: oh-my-hermes
+    description: '[omh] Hermes GitHub event operations workflow: route PR, issue, CI, and review webhook events into triage,
+      review, or fix handoff cards. Use when the user says: github-event-ops, github event ops, github ops, github triage,
+      github pr, github review, github action, github actions.'
+    trigger: '[omh] Hermes GitHub event operations workflow: route PR, issue, CI, and review webhook events into t'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - oh-my-hermes
+    - prepare_github_event_ops_card
+    - production-audit
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-github-issue-intake
+    category: oh-my-hermes
+    description: '[omh] GitHub issue intake workflow: turn a public chat report into a confirmed, verified issue package.
+      Use when the user says: github-issue-intake, github issue intake, issue intake, file this as an issue, file a github
+      issue, open a github issue, create a github issue, submit a github issue.'
+    trigger: '[omh] GitHub issue intake workflow: turn a public chat report into a confirmed, verified issue packa'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - github-ops
+    - oh-my-hermes
+    - production-audit
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-harness-session-inventory
+    category: oh-my-hermes
+    description: '[omh] Hermes harness session inventory workflow: normalize Codex, Claude Code, Hermes, OpenCode, Cursor,
+      MCP host, worktree, and wrapper session metadata into one drift-aware inventory. Use when the user says: harness-session-inventory,
+      harness session inventory, session inventory, session adapter, '
+    trigger: '[omh] Hermes harness session inventory workflow: normalize Codex, Claude Code, Hermes, OpenCode, Cur'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - harness-session-inventory
+    - prepare_harness_session_inventory
+    - production-audit
+    - workspace-audit
+    mcp_requirements:
+    - config
+    - configs
+    - drift
+    - host
+    - hosts
+    - inventory
+    - tool-call
+    - "\uC778\uBCA4\uD1A0\uB9AC"
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-idea-to-deploy
+    category: oh-my-hermes
+    description: '[omh] Hermes Idea-to-Deploy workflow: shape an app idea into decisions, delivery handoff, verification,
+      release, and monitoring status. Use when the user says: idea-to-deploy, idea to deploy, from idea to deploy, plan to
+      deploy, idea to launch, ship this idea, ship this feature, launch this feature.'
+    trigger: '[omh] Hermes Idea-to-Deploy workflow: shape an app idea into decisions, delivery handoff, verificati'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - build-failure-triage
+    - code-review
+    - cto-loop
+    - delivery
+    - deploy-and-monitor
+    - idea-to-deploy
+    - llm-app-dev
+    - security-safety-review
+    - ultrawork
+    - verification-gate
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-image-cards
+    category: oh-my-hermes
+    description: '[omh] Image prompt cards - turn meetings, reports, PRs, issues, research, and releases into domain-aware
+      image prompt cards. Use when the user says: img-summary, img summary, visual prompt card, image card, image generation,
+      image edit, edit this image, remove the background.'
+    trigger: '[omh] Image prompt cards - turn meetings, reports, PRs, issues, research, and releases into domain-a'
+    portable: true
+    environment_specific: true
+    dependencies:
+    - accessibility-audit
+    - apple-design
+    - award-bar-score
+    - design-orchestration
+    - design-quality-gate
+    - frontend
+    - img-summary
+    - materials-package
+    - report-package
+    - visual-qa
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-inference-serving
+    category: oh-my-hermes
+    description: '[omh] OMH Inference Serving workflow: choose the serving engine and quantization from decision tables, prepare
+      deployment as an idempotent runbook with observed-only verification, and measure the endpoint with the standard TTFT/TPOT/goodput
+      protocol. Use when the user says: inference-serving, infere'
+    trigger: '[omh] OMH Inference Serving workflow: choose the serving engine and quantization from decision table'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - executor-runtime-readiness
+    - inference-serving
+    - model-optimization
+    - model-setup
+    - performance-goal
+    - product-docs
+    - research
+    - source-finder
+    - ultraperf
+    - web-research
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-instinct-ledger
+    category: oh-my-hermes
+    description: '[omh] Instinct Ledger workflow: turn repeated project or cross-project lessons into atomic, confidence-scored
+      instinct candidates with scoped promotion and export boundaries. Use when the user says: instinct-ledger, instinct ledger,
+      project instincts, project-scoped instincts, project scoped instinc'
+    trigger: '[omh] Instinct Ledger workflow: turn repeated project or cross-project lessons into atomic, confiden'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - instinct-ledger
+    - prepare_instinct_ledger
+    - production-audit
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-jit-learn
+    category: oh-my-hermes
+    description: '[omh] Just-in-time learning workflow: select and confirm an immediate learning target, research credible
+      sources, and prepare an application-first brief without popularity ranking. Use when the user says: jit-learn, learn
+      next, learn now, blocker-specific learning target, highest-leverage learning t'
+    trigger: '[omh] Just-in-time learning workflow: select and confirm an immediate learning target, research cred'
+    portable: false
+    environment_specific: false
+    dependencies:
+    - autoresearch-goal
+    - best-practice-research
+    - curriculum-design
+    - jit-learn
+    - paper-learning
+    - product-docs
+    - research
+    - source-finder
+    - web-research
+    - workflow-learning
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-legal-compliance-review
+    category: oh-my-hermes
+    description: "[omh] Surface contract and compliance risks, questions, and escalation points before a legal decision or\
+      \ action. Use when the user says: contract review, contract liability clause, regulatory analysis, compliance review,\
+      \ \uACC4\uC57D\uC11C \uAC80\uD1A0, \uADDC\uC81C \uBD84\uC11D, \uCEF4\uD50C\uB77C\uC774\uC5B8\uC2A4 \uAC80\uD1A0."
+    trigger: '[omh] Surface contract and compliance risks, questions, and escalation points before a legal decisio'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - autoresearch-goal
+    - best-practice-research
+    - connector-operator
+    - content-operator
+    - legal-compliance-review
+    - product-docs
+    - research
+    - security-safety-review
+    - source-finder
+    - web-research
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-live-info
+    category: oh-my-hermes
+    description: '[omh] Policy overlay for live lookups - add provider, freshness, units, and source-quality gates after preferring
+      native live-data tools for ordinary weather, finance, sports, maps, and time-zone requests. Use when the user says:
+      live-info-operator, live info operator, live information, real time in'
+    trigger: '[omh] Policy overlay for live lookups - add provider, freshness, units, and source-quality gates aft'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - live-info-operator
+    - prepare_live_info_operator_card
+    - production-audit
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-llm-app-dev
+    category: oh-my-hermes
+    description: '[omh] Hermes LLM App Development workflow: prepare a build handoff for an LLM-powered feature with a pinned
+      provider boundary, schema-first outputs, versioned prompt files, grounded retrieval, and an eval suite as a shipped
+      deliverable. Use when the user says: llm-app-dev, llm app development, llm a'
+    trigger: '[omh] Hermes LLM App Development workflow: prepare a build handoff for an LLM-powered feature with a'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - agent-debug
+    - agent-evaluation
+    - build-failure-triage
+    - code-review
+    - context-budget-review
+    - cto-loop
+    - deploy-and-monitor
+    - idea-to-deploy
+    - llm-app-dev
+    - security-safety-review
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-localization-review
+    category: oh-my-hermes
+    description: "[omh] Make a product or content release locale-ready with terminology, cultural-fit, and quality-review\
+      \ guidance. Use when the user says: localization review, translation QA, locale glossary, \uD604\uC9C0\uD654 \uAC80\uD1A0\
+      , \uBC88\uC5ED QA, \uC6A9\uC5B4\uC9D1."
+    trigger: '[omh] Make a product or content release locale-ready with terminology, cultural-fit, and quality-rev'
+    portable: false
+    environment_specific: false
+    dependencies:
+    - apple-design
+    - award-bar-score
+    - connector-operator
+    - content-operator
+    - design-orchestration
+    - design-quality-gate
+    - legal-compliance-review
+    - localization-review
+    - visual-qa
+    - workspace-file-operator
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-materials-package
+    category: oh-my-hermes
+    description: '[omh] Hermes Materials Package workflow: decks, PDFs, spreadsheets, documents, HWP, Markdown, and binary
+      export handoffs. Use when the user says: materials-package, material package, materials package, document package, deck
+      file, binary export, file export, render qa.'
+    trigger: '[omh] Hermes Materials Package workflow: decks, PDFs, spreadsheets, documents, HWP, Markdown, and bi'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - accessibility-audit
+    - apple-design
+    - award-bar-score
+    - design-orchestration
+    - design-quality-gate
+    - frontend
+    - materials-package
+    - operating-rhythm
+    - report-package
+    - visual-qa
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-media-input
+    category: oh-my-hermes
+    description: '[omh] User-sent media - audio, video, YouTube links, screenshots, receipts, OCR, meeting recordings, transcripts,
+      timestamps, and clip summaries, gated for source, permission, and hallucination risk. Use when the user says: media-input-operator,
+      media input operator, media input, audio transcription'
+    trigger: '[omh] User-sent media - audio, video, YouTube links, screenshots, receipts, OCR, meeting recordings,'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - accessibility-audit
+    - apple-design
+    - award-bar-score
+    - content-operator
+    - design-orchestration
+    - design-quality-gate
+    - frontend
+    - media-input-operator
+    - prepare_media_input_card
+    - visual-qa
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-meeting-brief
+    category: oh-my-hermes
+    description: '[omh] Hermes Meeting Brief workflow: agenda, prompts, decisions, and record template. Use when the user
+      says: meeting-brief, meeting brief, meeting agenda, agenda, discussion prompts, decisions needed, record template, meeting
+      topics.'
+    trigger: '[omh] Hermes Meeting Brief workflow: agenda, prompts, decisions, and record template. Use when the u'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - autoresearch-goal
+    - best-practice-research
+    - inference-serving
+    - meeting-brief
+    - model-optimization
+    - oh-my-hermes
+    - product-docs
+    - research
+    - source-finder
+    - web-research
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-memory-new
+    category: oh-my-hermes
+    description: '[omh] Capture one bounded durable project or product memory candidate through explicit remember, refuse,
+      or defer review; for existing Hermes memory use omh-memory-sync, and for a past decision use decision-recall. Use when
+      the user says: memory-new, new memory, project memory, product memory, remem'
+    trigger: '[omh] Capture one bounded durable project or product memory candidate through explicit remember, ref'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - decision-recall
+    - durable
+    - memory-new
+    - memory-sync
+    - not_omh_reviewed
+    - oh-my-hermes
+    - prepare_memory_new
+    - standard
+    - volatile
+    - wiki
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-memory-sync
+    category: oh-my-hermes
+    description: '[omh] English-canonical Hermes memory-review guidance: inspect USER.md and MEMORY.md claims and prepare
+      a native write diff without invoking, applying, or observing a native write; for a new fact use memory-new, and for
+      a past decision use decision-recall. Use when the user says: memory-sync, memory'
+    trigger: '[omh] English-canonical Hermes memory-review guidance: inspect USER.md and MEMORY.md claims and prep'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - MEMORY.md
+    - USER.md
+    - decision-recall
+    - memory-new
+    - memory-sync
+    - not_omh_reviewed
+    - oh-my-hermes
+    - omh_memory
+    - prepare_memory_sync
+    - wiki
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-meta-router
+    category: oh-my-hermes
+    description: '[omh] Meta-routing guidance for a leading /omh command: reason over the imperative task, consult the live
+      workflow catalog, and select or chain the right workflow(s).'
+    trigger: '[omh] Meta-routing guidance for a leading /omh command: reason over the imperative task, consult the'
+    portable: false
+    environment_specific: false
+    dependencies:
+    - adversarial-consensus
+    - codebase-onboarding
+    - context
+    - deep-interview
+    - meta-router
+    - oh-my-hermes
+    - omh
+    - plan
+    - ralplan
+    - router
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-model-optimization
+    category: oh-my-hermes
+    description: '[omh] OMH Model Optimization workflow: when a model family ships a new generation or changes its serving
+      contract, walk the recognition, research, calibration, routing, and measurement process that keeps model handling honest
+      and current. Use when the user says: model-optimization, model optimizatio'
+    trigger: '[omh] OMH Model Optimization workflow: when a model family ships a new generation or changes its ser'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - autoresearch-goal
+    - best-practice-research
+    - model-optimization
+    - model-setup
+    - performance-goal
+    - product-docs
+    - research
+    - source-finder
+    - ultraperf
+    - web-research
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-model-setup
+    category: oh-my-hermes
+    description: '[omh] Hermes Model Setup workflow: diagnose role-slot model configuration, guide provider connection, and
+      apply changes only after diff approval. Use when the user says: model-setup, hermes model setup, set up my models, set
+      up my model, configure my models, configure model provider, connect my mode'
+    trigger: '[omh] Hermes Model Setup workflow: diagnose role-slot model configuration, guide provider connection'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - model-setup
+    - oh-my-hermes
+    - production-audit
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-morning-brief
+    category: oh-my-hermes
+    description: '[omh] Morning brief SETUP (one-time) - connects mail and calendar MCP with read-and-draft-only scope and
+      diff approval; produces the configuration, not the daily brief itself. Use when the user says: morning-brief, morning
+      brief, connect my email for a morning brief, set up morning brief, configure '
+    trigger: '[omh] Morning brief SETUP (one-time) - connects mail and calendar MCP with read-and-draft-only scope'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - morning-brief
+    - oh-my-hermes
+    - production-audit
+    - workspace-audit
+    mcp_requirements:
+    - access
+    - config
+    - connection
+    - prerequisite
+    - with
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-native-debugging
+    category: oh-my-hermes
+    description: '[omh] Hermes native-debugging workflow: prepare hypothesis-driven debugging of native binaries and instruct
+      the executor to drive a DAP debugger instead of printf. Use when the user says: native-debugging, native debugging,
+      native binary, segfault, segmentation fault, core dump, stack corruption, me'
+    trigger: '[omh] Hermes native-debugging workflow: prepare hypothesis-driven debugging of native binaries and i'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - agent-debug
+    - build-failure-triage
+    - cto-loop
+    - deploy-and-monitor
+    - idea-to-deploy
+    - llm-app-dev
+    - native-debugging
+    - rust
+    - unsafe
+    - verification-gate
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-operating-rhythm
+    category: oh-my-hermes
+    description: '[omh] Hermes Operating Rhythm workflow: meeting minutes, scrum/sprint records, retros, decisions, and follow-up
+      history. Use when the user says: operating-rhythm, operating rhythm, meeting minutes, meeting history, scrum record,
+      sprint planning, sprint review, sprint retrospective.'
+    trigger: '[omh] Hermes Operating Rhythm workflow: meeting minutes, scrum/sprint records, retros, decisions, an'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - autoresearch-goal
+    - best-practice-research
+    - meeting-brief
+    - model-optimization
+    - operating-rhythm
+    - ops-review
+    - product-docs
+    - research
+    - source-finder
+    - web-research
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-ops-observability-card
+    category: oh-my-hermes
+    description: '[omh] Hermes ops observability workflow: prepare an operations command-board for wrapper-safe token, cost,
+      latency, run history, queue, failure-mode, external metric-provider, and service-quality evidence boundaries. Use when
+      the user says: ops-observability-card, observability card, operations comm'
+    trigger: '[omh] Hermes ops observability workflow: prepare an operations command-board for wrapper-safe token,'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - ops-observability-card
+    - prepare_ops_observability_card
+    - production-audit
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-ops-review
+    category: oh-my-hermes
+    description: '[omh] Hermes Ops Review workflow: status, risks, blockers, priorities, and follow-ups. Use when the user
+      says: ops-review, ops review, weekly ops review, status review, operating review, release risks, risks and blockers,
+      priorities.'
+    trigger: '[omh] Hermes Ops Review workflow: status, risks, blockers, priorities, and follow-ups. Use when the '
+    portable: true
+    environment_specific: false
+    dependencies:
+    - autoresearch-goal
+    - best-practice-research
+    - model-optimization
+    - operating-rhythm
+    - operations
+    - ops-review
+    - product-docs
+    - research
+    - source-finder
+    - web-research
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-paper-learning
+    category: oh-my-hermes
+    description: '[omh] Hermes Paper Learning workflow: explain a supplied paper or paper/PDF at a selected level while preserving
+      full section coverage and source evidence boundaries. Use when the user says: paper-learning, paper learning, paper-explainer,
+      paper explainer, paper explanation, explain this paper, expl'
+    trigger: '[omh] Hermes Paper Learning workflow: explain a supplied paper or paper/PDF at a selected level whil'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - autoresearch-goal
+    - best-practice-research
+    - img-summary
+    - materials-package
+    - paper-learning
+    - product-docs
+    - research
+    - research-department
+    - source-finder
+    - web-research
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-parallel-tools
+    category: oh-my-hermes
+    description: '[omh] Hermes Parallel Tools workflow: check version currency and parallel-tool capability status, then apply
+      an update only after diff approval. Use when the user says: parallel-tools, parallel tools, hermes parallel tools setup,
+      update hermes for parallel tools, check parallel tool support, enable '
+    trigger: '[omh] Hermes Parallel Tools workflow: check version currency and parallel-tool capability status, th'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - oh-my-hermes
+    - parallel-tools
+    - production-audit
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-people-ops
+    category: oh-my-hermes
+    description: "[omh] Turn hiring and people context into a fair, structured recruiting or people-operations brief. Use\
+      \ when the user says: recruiting plan, hiring scorecard, interview scorecard, candidate debrief, \uCC44\uC6A9 \uACC4\
+      \uD68D, \uBA74\uC811 \uD3C9\uAC00\uD45C, \uD6C4\uBCF4\uC790 \uBE44\uAD50."
+    trigger: '[omh] Turn hiring and people context into a fair, structured recruiting or people-operations brief. '
+    portable: false
+    environment_specific: false
+    dependencies:
+    - autoresearch-goal
+    - best-practice-research
+    - connector-operator
+    - content-operator
+    - legal-compliance-review
+    - people-ops
+    - product-docs
+    - research
+    - source-finder
+    - web-research
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-performance-goal
+    category: oh-my-hermes
+    description: '[omh] Hermes adaptation for measurable performance-goal execution. Use when the user says: performance-goal,
+      performance goal, latency, throughput, benchmark.'
+    trigger: '[omh] Hermes adaptation for measurable performance-goal execution. Use when the user says: performan'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - adversarial-consensus
+    - context
+    - deep-interview
+    - meta-router
+    - oh-my-hermes
+    - optimization
+    - performance-goal
+    - plan
+    - ralplan
+    - ultraperf
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-physical-device-readiness
+    category: oh-my-hermes
+    description: '[omh] Physical device readiness - gate robots, 3D printers, IoT relays, sensors, and lab hardware before
+      trials; use external-connector-readiness for provider or connector adoption and toolbelt-readiness for missing control
+      tools. Use when the user says: physical-device-readiness, physical device re'
+    trigger: '[omh] Physical device readiness - gate robots, 3D printers, IoT relays, sensors, and lab hardware be'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - physical-device-readiness
+    - prepare_physical_device_readiness
+    - production-audit
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-plan
+    category: oh-my-hermes
+    description: '[omh] Hermes Plan workflow: structured planning before execution. Use when the user says: plan, implementation
+      plan, task breakdown, safe feature, safely add a feature, add a feature, feature request, new feature.'
+    trigger: '[omh] Hermes Plan workflow: structured planning before execution. Use when the user says: plan, impl'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - adversarial-consensus
+    - codebase-onboarding
+    - context
+    - deep-interview
+    - meta-router
+    - oh-my-hermes
+    - plan
+    - planning
+    - ralplan
+    - "\u5B9F\u88C5\u8A08\u753B"
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-product-brief
+    category: oh-my-hermes
+    description: "[omh] Turn product evidence into a decision-ready PRD, prioritization frame, and roadmap brief. Use when\
+      \ the user says: product requirements document, PRD, roadmap prioritization, \uC81C\uD488 \uC694\uAD6C\uC0AC\uD56D \uBB38\
+      \uC11C, \uC81C\uD488 \uAE30\uD68D\uC11C, \uB85C\uB4DC\uB9F5 \uC6B0\uC120\uC21C\uC704."
+    trigger: '[omh] Turn product evidence into a decision-ready PRD, prioritization frame, and roadmap brief. Use '
+    portable: true
+    environment_specific: false
+    dependencies:
+    - connector-operator
+    - context
+    - deep-interview
+    - feedback-triage
+    - meta-router
+    - oh-my-hermes
+    - product-brief
+    - ralplan
+    - strategy-brief
+    - ultrawork
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-production-audit
+    category: oh-my-hermes
+    description: '[omh] Hermes Production Audit workflow: evaluate release, deploy, security, observability, rollback, docs,
+      and support readiness without claiming production access. Use when the user says: production-audit, production audit,
+      production readiness, prod audit, prod readiness, ready for production, rea'
+    trigger: '[omh] Hermes Production Audit workflow: evaluate release, deploy, security, observability, rollback,'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - code-review
+    - github-event-ops
+    - github-issue-intake
+    - production-audit
+    - reliability-review
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-prompt-import-readiness
+    category: oh-my-hermes
+    description: '[omh] Prompt import readiness - review and normalize external CLI-agent prompt files before offering slash-command
+      candidates; use external-connector-readiness for plugin or API adoption and toolbelt-readiness for missing runtime capabilities.
+      Use when the user says: prompt-import-readiness, prompt '
+    trigger: '[omh] Prompt import readiness - review and normalize external CLI-agent prompt files before offering'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - prepare_prompt_import_readiness
+    - production-audit
+    - prompt-import-readiness
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-provider-profile-posture
+    category: oh-my-hermes
+    description: "[omh] Prepare provider-profile metadata without reading secrets or calling providers. Use when the user\
+      \ says: provider-profile-posture, provider profile posture, provider profile readiness, secret presence confirmation,\
+      \ connector profile posture, \uACF5\uAE09\uC790 \uD504\uB85C\uD544 \uC0C1\uD0DC, \uC2DC\uD06C\uB9BF \uC874\uC7AC \uD655\
+      \uC778, \uCEE4\uB125\uD130 \uC900\uBE44 \uC0C1\uD0DC."
+    trigger: '[omh] Prepare provider-profile metadata without reading secrets or calling providers. Use when the u'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - prepare_provider_profile_posture
+    - production-audit
+    - provider-profile-posture
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-refactor-plan
+    category: oh-my-hermes
+    description: '[omh] Hermes refactor planning workflow: turn a decided boundary-changing refactor into a phased plan -
+      reconnaissance, contracts-first phase order, per-phase verification and rollback, a files table, and an explicit approval
+      gate before any edit. Use when the user says: refactor-plan, refactor plan'
+    trigger: '[omh] Hermes refactor planning workflow: turn a decided boundary-changing refactor into a phased pla'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - adversarial-consensus
+    - ai-slop-cleaner
+    - context
+    - deep-interview
+    - meta-router
+    - oh-my-hermes
+    - plan
+    - ralplan
+    - refactor-plan
+    - verification-gate
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-reliability-review
+    category: oh-my-hermes
+    description: '[omh] Hermes Reliability Review workflow: postmortems, SLOs, error budgets, incident follow-ups, and service
+      reliability evidence. Use when the user says: reliability-review, reliability review, incident review, incident postmortem,
+      postmortem, post-mortem, slo review, slo.'
+    trigger: '[omh] Hermes Reliability Review workflow: postmortems, SLOs, error budgets, incident follow-ups, and'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - autoresearch-goal
+    - best-practice-research
+    - inference-serving
+    - model-optimization
+    - product-docs
+    - reliability-review
+    - report-package
+    - research
+    - source-finder
+    - web-research
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-report-package
+    category: oh-my-hermes
+    description: '[omh] Hermes Report Package workflow: weekly/monthly reports, executive briefs, PPT-ready outlines, and
+      upload packages. Use when the user says: report-package, report package, weekly report, monthly report, executive report,
+      exec brief, leadership deck, status package.'
+    trigger: '[omh] Hermes Report Package workflow: weekly/monthly reports, executive briefs, PPT-ready outlines, '
+    portable: true
+    environment_specific: false
+    dependencies:
+    - .pptx
+    - accessibility-audit
+    - apple-design
+    - award-bar-score
+    - design-orchestration
+    - design-quality-gate
+    - frontend
+    - reliability-review
+    - report-package
+    - visual-qa
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-research-brief
+    category: oh-my-hermes
+    description: '[omh] Business research brief - turns a market, competitor, pricing, or customer question into a structured
+      evidence-vs-inference brief; for raw link gathering use ulw-research, and for ongoing multi-role research use research-department.
+      Use when the user says: research-brief, business-research, bu'
+    trigger: '[omh] Business research brief - turns a market, competitor, pricing, or customer question into a str'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - autoresearch-goal
+    - best-practice-research
+    - inference-serving
+    - model-optimization
+    - oh-my-hermes
+    - product-docs
+    - research
+    - research-brief
+    - source-finder
+    - web-research
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-research-department
+    category: oh-my-hermes
+    description: '[omh] Research operations department - coordinate Scout, Analyst, and Briefer work with source-inbox and
+      status boundaries; for one decision brief use research-brief, and for typed candidates before research starts use source-finder.
+      Use when the user says: research-department, research department, '
+    trigger: '[omh] Research operations department - coordinate Scout, Analyst, and Briefer work with source-inbox'
+    portable: true
+    environment_specific: true
+    dependencies:
+    - automation-blueprint
+    - autoresearch-goal
+    - best-practice-research
+    - model-optimization
+    - product-docs
+    - research
+    - research-brief
+    - research-department
+    - source-finder
+    - web-research
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-routing
+    category: oh-my-hermes
+    description: '[omh] Router guidance for using oh-my-hermes workflow skills inside Hermes Agent.'
+    trigger: '[omh] Router guidance for using oh-my-hermes workflow skills inside Hermes Agent'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - deep-interview
+    - light
+    - loop
+    - paper-learning
+    - product-docs
+    - ralplan
+    - research
+    - research-department
+    - source-finder
+    - ultraperf
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-rules-distill
+    category: oh-my-hermes
+    description: '[omh] Hermes Rules Distill workflow: extract repeated principles from skills, prompts, traces, reviews,
+      and failures into reviewed rule candidates without auto-mutating guidance. Use when the user says: rules-distill, rules
+      distill, distill rules, rule distillation, principle distill, skill principl'
+    trigger: '[omh] Hermes Rules Distill workflow: extract repeated principles from skills, prompts, traces, revie'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - achievements
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - production-audit
+    - rules-distill
+    - wiki
+    - workflow-learning
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-run-efficiency
+    category: oh-my-hermes
+    description: "[omh] Report supplied local run efficiency while provider and host data stay unobserved. Use when the user\
+      \ says: run-efficiency, run efficiency report, local run efficiency, context utilization, tool duration report, \uC2E4\
+      \uD589 \uD6A8\uC728 \uB9AC\uD3EC\uD2B8, \uCEE8\uD14D\uC2A4\uD2B8 \uC0AC\uC6A9\uB7C9, \uB3C4\uAD6C \uC9C0\uC5F0 \uC2DC\
+      \uAC04."
+    trigger: '[omh] Report supplied local run efficiency while provider and host data stay unobserved. Use when th'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - production-audit
+    - run-efficiency
+    - show_run_efficiency_report
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-running-work-board
+    category: oh-my-hermes
+    description: "[omh] Hermes adaptation for showing which coding units are running right now, on which runtime and model,\
+      \ with observed tokens and elapsed time. Use when the user says: running-work-board, running work board, which units\
+      \ are running, what models are running, \uC9C0\uAE08 \uBB50 \uB3CC\uACE0 \uC788\uC5B4, \uBB50\uAC00 \uB3CC\uACE0 \uC788\
+      \uC5B4, \uC5B4\uB5A4 \uBAA8\uB378\uB85C \uB3CC\uACE0 \uC788\uC5B4, \uC2E4\uD589 \uC911\uC778"
+    trigger: '[omh] Hermes adaptation for showing which coding units are running right now, on which runtime and m'
+    portable: false
+    environment_specific: false
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - oh-my-hermes
+    - production-audit
+    - running-work-board
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-rust
+    category: oh-my-hermes
+    description: '[omh] Hermes Rust workflow: prepare Rust changes with ownership, error, and API discipline, and escalate
+      any unsafe, FFI, or lock-free change to the UB checklist. Use when the user says: rust, rust code, rust skill, rustlang,
+      borrow checker, lifetime error, ownership error, trait bound.'
+    trigger: '[omh] Hermes Rust workflow: prepare Rust changes with ownership, error, and API discipline, and esca'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - backend
+    - code-review
+    - cto-loop
+    - expect
+    - idea-to-deploy
+    - llm-app-dev
+    - native-debugging
+    - rust
+    - unsafe
+    - unwrap
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-sales-development
+    category: oh-my-hermes
+    description: "[omh] Turn an account or market opportunity into a focused discovery, qualification, and next-step brief.\
+      \ Use when the user says: sales discovery, account plan, outbound messaging, \uC601\uC5C5 \uBC1C\uAD74, \uACE0\uAC1D\
+      \uC0AC \uACC4\uD68D, \uC544\uC6C3\uBC14\uC6B4\uB4DC \uBA54\uC2DC\uC9C0."
+    trigger: '[omh] Turn an account or market opportunity into a focused discovery, qualification, and next-step b'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - autoresearch-goal
+    - best-practice-research
+    - connector-operator
+    - content-operator
+    - product-docs
+    - research
+    - sales-development
+    - source-finder
+    - strategy-brief
+    - web-research
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-security-safety-review
+    category: oh-my-hermes
+    description: '[omh] Hermes Security Safety Review workflow: review prompt, tool, secret, dependency, destructive-action,
+      and explicit local plugin risks before agent or code execution. Use when the user says: security-safety-review, security
+      safety review, ai coding safety, agent safety review, prompt injection r'
+    trigger: '[omh] Hermes Security Safety Review workflow: review prompt, tool, secret, dependency, destructive-a'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - build-failure-triage
+    - code-review
+    - cto-loop
+    - deploy-and-monitor
+    - idea-to-deploy
+    - llm-app-dev
+    - oh-my-hermes
+    - production-audit
+    - security-safety-review
+    - verification-gate
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-skill
+    category: oh-my-hermes
+    description: '[omh] Hermes adaptation for managing local skills. Use when the user says: skill, skills, manage skills.'
+    trigger: '[omh] Hermes adaptation for managing local skills. Use when the user says: skill, skills, manage ski'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - operator
+    - production-audit
+    - skill
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-skill-health
+    category: oh-my-hermes
+    description: '[omh] Skill Health workflow: prepare a metadata-only OMH skill portfolio dashboard with stale surfaces,
+      observed failure signals, pending amendments, and top actions. Use when the user says: skill-health, skill health, skill
+      portfolio health, skill dashboard, skill health dashboard, skill failure pa'
+    trigger: '[omh] Skill Health workflow: prepare a metadata-only OMH skill portfolio dashboard with stale surfac'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - prepare_skill_health
+    - production-audit
+    - skill-health
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-skill-scout
+    category: oh-my-hermes
+    description: '[omh] Skill Scout workflow: prepare a metadata-only search-before-creation report for local, marketplace,
+      GitHub, and web skill candidates with risk review and adoption options. Use when the user says: skill-scout, skill scout,
+      skill candidate, skill candidate search, skill discovery, find a skill, '
+    trigger: '[omh] Skill Scout workflow: prepare a metadata-only search-before-creation report for local, marketp'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - prepare_skill_scout
+    - production-audit
+    - skill-scout
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-source-finder
+    category: oh-my-hermes
+    description: '[omh] Source candidate inventory - prepare typed source candidates and acquisition status before downstream
+      work; use ulw-research to fetch and cite them, or research-brief to turn them into a decision-ready brief. Use when
+      the user says: source-finder, source finder, source acquisition, source inta'
+    trigger: '[omh] Source candidate inventory - prepare typed source candidates and acquisition status before dow'
+    portable: true
+    environment_specific: true
+    dependencies:
+    - deliverable-package
+    - img-summary
+    - materials-package
+    - paper-learning
+    - product-docs
+    - research
+    - research-brief
+    - research-department
+    - source-finder
+    - web-research
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-support-operations
+    category: oh-my-hermes
+    description: "[omh] Turn a support case into a clear customer reply, severity path, and owned next step. Use when the\
+      \ user says: support escalation, customer support reply, ticket triage, \uACE0\uAC1D \uC9C0\uC6D0 \uC5D0\uC2A4\uCEEC\
+      \uB808\uC774\uC158, \uACE0\uAC1D \uB2F5\uBCC0 \uCD08\uC548, \uC9C0\uC6D0 \uD2F0\uCF13 \uBD84\uB958."
+    trigger: '[omh] Turn a support case into a clear customer reply, severity path, and owned next step. Use when '
+    portable: true
+    environment_specific: false
+    dependencies:
+    - best-practice-research
+    - connector-operator
+    - content-operator
+    - feedback-triage
+    - product-docs
+    - reliability-review
+    - research
+    - source-finder
+    - support-operations
+    - web-research
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-tech-debt-audit
+    category: oh-my-hermes
+    description: '[omh] Hermes Tech Debt Audit workflow: build the severity-by-effort debt ledger from observed repo evidence
+      - orient, audit the named dimensions with file:line citations, rank fixes and quick wins - and reconcile RESOLVED/NEW/CARRIED
+      against the previous ledger on rerun. Use when the user says: tech'
+    trigger: '[omh] Hermes Tech Debt Audit workflow: build the severity-by-effort debt ledger from observed repo e'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - ai-slop-cleaner
+    - build-failure-triage
+    - code-review
+    - cto-loop
+    - deploy-and-monitor
+    - idea-to-deploy
+    - llm-app-dev
+    - production-audit
+    - refactor-plan
+    - tech-debt-audit
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-terminal
+    category: oh-my-hermes
+    description: '[omh] Policy overlay for terminal commands - add cwd, environment, safety, and result-evidence gates after
+      preferring native shell tools for ordinary CLI, package-manager, and test runs. Use when the user says: command-operator,
+      command operator, terminal command, terminal task, shell command, shell'
+    trigger: '[omh] Policy overlay for terminal commands - add cwd, environment, safety, and result-evidence gates'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - command-operator
+    - github-event-ops
+    - github-issue-intake
+    - prepare_command_operator_card
+    - production-audit
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-toolbelt-readiness
+    category: oh-my-hermes
+    description: '[omh] Toolbelt readiness - inventory which MCP servers, CLIs, APIs, credentials, and connectors a workflow
+      needs; use external-connector-readiness to assess one named integration and executor-runtime-readiness to choose the
+      coding owner. Use when the user says: toolbelt-readiness, mcp readiness, too'
+    trigger: '[omh] Toolbelt readiness - inventory which MCP servers, CLIs, APIs, credentials, and connectors a wo'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - prepare_toolbelt_readiness
+    - production-audit
+    - toolbelt-readiness
+    - workspace-audit
+    mcp_requirements:
+    - installation
+    - readiness
+    - server
+    - servers
+    - tool
+    - tools
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-verification-gate
+    category: oh-my-hermes
+    description: '[omh] Hermes Verification Gate workflow: define and record build, lint, typecheck, test, security, docs,
+      generated-output, and CI evidence before completion or merge. Use when the user says: verification-gate, verification
+      gate, quality gate, release gate, test gate, build lint test, lint typecheck '
+    trigger: '[omh] Hermes Verification Gate workflow: define and record build, lint, typecheck, test, security, d'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - build-failure-triage
+    - code-review
+    - cto-loop
+    - deploy-and-monitor
+    - idea-to-deploy
+    - llm-app-dev
+    - production-audit
+    - security-safety-review
+    - verification-gate
+    - visual-qa
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-visual-qa
+    category: oh-my-hermes
+    description: '[omh] Hermes visual-qa workflow: prepare observed-only rendered QA gates for web, frontend, image, document,
+      and TUI surfaces. Use when the user says: visual-qa, visual qa, visual QA, visual quality assurance, visual check, web
+      qa, web visual qa, screenshot qa.'
+    trigger: '[omh] Hermes visual-qa workflow: prepare observed-only rendered QA gates for web, frontend, image, d'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - accessibility-audit
+    - apple-design
+    - award-bar-score
+    - content-operator
+    - design-orchestration
+    - design-quality-gate
+    - frontend
+    - img-summary
+    - oh-my-hermes
+    - visual-qa
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-voice-input
+    category: oh-my-hermes
+    description: '[omh] Terse voice and mobile-style requests - turn short spoken-style asks into clarify, plan, status, handoff,
+      or confirmation actions. Use when the user says: voice-operator, voice operator, voice-first, voice command, mobile
+      command, short command, dictated command, dictated request.'
+    trigger: '[omh] Terse voice and mobile-style requests - turn short spoken-style asks into clarify, plan, statu'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - prepare_voice_operator_card
+    - production-audit
+    - voice-operator
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-web-research
+    category: oh-my-hermes
+    description: '[omh] Web lookup lane - settle a current-facts question in one cited retrieval round with retrieval dates
+      and source-quality notes; for pre-spec grounding across reference implementations use `research`. Use when the user
+      says: web-research, web research, web search, search the web, internet search,'
+    trigger: '[omh] Web lookup lane - settle a current-facts question in one cited retrieval round with retrieval '
+    portable: false
+    environment_specific: true
+    dependencies:
+    - autoresearch-goal
+    - best-practice-research
+    - codebase-onboarding
+    - product-docs
+    - research
+    - research-brief
+    - research-department
+    - source-finder
+    - web-research
+    - websearch-setup
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-websearch-setup
+    category: oh-my-hermes
+    description: '[omh] Hermes Web Search Setup workflow: diagnose scraper and auxiliary extract-model configuration, guide
+      account setup, and apply each change as its own diff approval. Use when the user says: websearch-setup, web search setup,
+      make web search cheaper, set up web search, configure web search, reduce'
+    trigger: '[omh] Hermes Web Search Setup workflow: diagnose scraper and auxiliary extract-model configuration, '
+    portable: false
+    environment_specific: true
+    dependencies:
+    - .env
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - production-audit
+    - websearch-setup
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-wiki
+    category: oh-my-hermes
+    description: '[omh] Hermes adaptation for wiki construction blueprints and retained knowledge capture with destination-aware
+      external knowledge connection guidance. Use when the user says: wiki, project wiki, build a wiki, start a wiki, organize
+      my notes, external knowledge store, knowledge base, Obsidian.'
+    trigger: '[omh] Hermes adaptation for wiki construction blueprints and retained knowledge capture with destina'
+    portable: true
+    environment_specific: true
+    dependencies:
+    - decision-recall
+    - knowledge
+    - memory-new
+    - memory-sync
+    - oh-my-hermes
+    - unmaintained
+    - wiki
+    - wiki-ecosystem.md
+    - wiki-operations.md
+    - wiki-patterns.md
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: omh-workflow-learning
+    category: oh-my-hermes
+    description: '[omh] Hermes workflow learning workflow: classify and review self-improvement store routes as an auxiliary
+      review lane before durable writes, then record workflow attempts as metadata-only traces, evals, review queues, patch
+      proposals, regression cases, audits, indexes, and exports. Use when the use'
+    trigger: '[omh] Hermes workflow learning workflow: classify and review self-improvement store routes as an aux'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - agent-board
+    - automation-blueprint
+    - buzz
+    - github-event-ops
+    - github-issue-intake
+    - production-audit
+    - record_workflow_learning_trace
+    - workflow-learning
+    - workspace-audit
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: omh-workspace-audit
+    category: oh-my-hermes
+    description: '[omh] Hermes Workspace Audit workflow: map repository, skill, prompt, plugin, MCP, hook, config, and runtime
+      surfaces before strengthening or operating OMH. Use when the user says: workspace-audit, workspace audit, repo surface
+      audit, repository surface audit, workspace surface audit, repo inventory'
+    trigger: '[omh] Hermes Workspace Audit workflow: map repository, skill, prompt, plugin, MCP, hook, config, and'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - achievements
+    - automation-blueprint
+    - buzz
+    - doctor
+    - github-event-ops
+    - github-issue-intake
+    - production-audit
+    - research
+    - source-finder
+    - workspace-audit
+    mcp_requirements:
+    - inventory
+    - servers
+    has_supporting_files: false
+    supporting_files: []
+  productivity:
+  - name: productivity
+    category: productivity
+    description: No description
+    trigger: ''
+    portable: true
+    environment_specific: false
+    dependencies: []
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - nano-pdf
+    - maps
+    - teams-meeting-pipeline
+    - session-librarian
+    - box
+  research:
+  - name: research
+    category: research
+    description: No description
+    trigger: ''
+    portable: true
+    environment_specific: false
+    dependencies: []
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - grounded-citations
+    - blogwatcher
+    - competitor-news-monitor
+    - DESCRIPTION.md
+    - llm-wiki
+  smart-home:
+  - name: smart-home
+    category: smart-home
+    description: No description
+    trigger: ''
+    portable: true
+    environment_specific: false
+    dependencies: []
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - openhue
+    - DESCRIPTION.md
+  social-media:
+  - name: social-media
+    category: social-media
+    description: No description
+    trigger: ''
+    portable: true
+    environment_specific: false
+    dependencies: []
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - xurl
+    - DESCRIPTION.md
+    - ainews-carousel
+  software-development:
+  - name: software-development
+    category: software-development
+    description: No description
+    trigger: ''
+    portable: true
+    environment_specific: false
+    dependencies: []
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - codebase-memory-mcp
+    - database
+    - website-competitive-intelligence
+    - agent-modes
+    - test-driven-development
+  testing:
+  - name: testing
+    category: testing
+    description: No description
+    trigger: ''
+    portable: true
+    environment_specific: false
+    dependencies: []
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - test-crm-skill
+  ultraloop-workflows:
+  - name: ulw-context
+    category: ultraloop-workflows
+    description: '[omh] Project terminology alignment workflow: look up, capture, correct, and align the words a repository
+      uses before planning or handoff. Use when the user says: ulw-context, project terminology alignment, review project
+      terms, align project terminology, terminology this project uses.'
+    trigger: '[omh] Project terminology alignment workflow: look up, capture, correct, and align the words a repos'
+    portable: false
+    environment_specific: false
+    dependencies:
+    - adversarial-consensus
+    - context
+    - deep-interview
+    - memory-new
+    - memory-sync
+    - meta-router
+    - oh-my-hermes
+    - plan
+    - ralplan
+    - ulw-plan
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: ulw-interview
+    category: ultraloop-workflows
+    description: "[omh] Hermes Deep Interview workflow: one-question-at-a-time clarification. Use when the user says: deep-interview,\
+      \ interview, clarify, feature shaping, ambiguous product request, one question, \u8981\u4EF6\u3092\u8A70\u3081\u3066\
+      , \u66D6\u6627\u306A\u8981\u6C42."
+    trigger: '[omh] Hermes Deep Interview workflow: one-question-at-a-time clarification. Use when the user says: '
+    portable: true
+    environment_specific: true
+    dependencies:
+    - adversarial-consensus
+    - clarify
+    - codebase-onboarding
+    - context
+    - deep-interview
+    - interview
+    - meta-router
+    - oh-my-hermes
+    - plan
+    - ralplan
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: ulw-loop
+    category: ultraloop-workflows
+    description: '[omh] Hermes Loop workflow: agentic interviewer -> planner -> researcher -> builder -> reviewer cycles until
+      a real gate. Use when the user says: loop, goal loop, long horizon goal, never stop, research plan goal feedback, token
+      exhaustion resume, permission profile, star 10k.'
+    trigger: '[omh] Hermes Loop workflow: agentic interviewer -> planner -> researcher -> builder -> reviewer cycl'
+    portable: false
+    environment_specific: false
+    dependencies:
+    - adversarial-consensus
+    - codebase-onboarding
+    - context
+    - deep-interview
+    - loop
+    - meta-router
+    - oh-my-hermes
+    - plan
+    - ralplan
+    - ultrawork
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: ulw-maestro
+    category: ultraloop-workflows
+    description: '[omh] Maestro - prepares the handoff for the coding agent you already chose, composing its prompt from that
+      agent''s own installed skills; never selects the owner and never executes the work itself. Use when the user says: ulw-maestro,
+      coding handoff, prepare the handoff, prepare a coding handoff, ha'
+    trigger: '[omh] Maestro - prepares the handoff for the coding agent you already chose, composing its prompt fr'
+    portable: false
+    environment_specific: false
+    dependencies:
+    - build-failure-triage
+    - choose_executor
+    - code-review
+    - cto-loop
+    - deploy-and-monitor
+    - executor-runtime-readiness
+    - idea-to-deploy
+    - llm-app-dev
+    - maestro
+    - ultrawork
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: ulw-perf
+    category: ultraloop-workflows
+    description: '[omh] Ultraperf - find where a system is actually slow, leaking, or expensive across runtime, memory, token
+      cost, storage, rendering, inference, CI, and query domains, then fix one measured hot path at a time behind a regression
+      budget. Use when the user says: ultraperf, ulw-perf, performance audit,'
+    trigger: '[omh] Ultraperf - find where a system is actually slow, leaking, or expensive across runtime, memory'
+    portable: false
+    environment_specific: false
+    dependencies:
+    - agent-evaluation
+    - code-review
+    - context
+    - deep-interview
+    - meta-router
+    - oh-my-hermes
+    - performance-goal
+    - plan
+    - ralplan
+    - ultraperf
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: ulw-plan
+    category: ultraloop-workflows
+    description: '[omh] Hermes Ralplan workflow: consensus planning with review gates. Use when the user says: ralplan, consensus
+      plan, reviewed plan, issue to PR, acceptance criteria, verification command, reviewable PR, risky planning.'
+    trigger: '[omh] Hermes Ralplan workflow: consensus planning with review gates. Use when the user says: ralplan'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - ai-slop-cleaner
+    - context
+    - deep-interview
+    - delivery_boundary
+    - meta-router
+    - oh-my-hermes
+    - ralplan
+    - refactor-plan
+    - research
+    - ultrawork
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: ulw-qa
+    category: ultraloop-workflows
+    description: "[omh] Hermes UltraQA workflow: adversarial QA and fix loops. Use when the user says: ultraqa, adversarial\
+      \ qa, hostile scenarios, e2e qa, real-world qa, qa scenario, release qa, \u6575\u5BFE\u7684QA."
+    trigger: '[omh] Hermes UltraQA workflow: adversarial QA and fix loops. Use when the user says: ultraqa, advers'
+    portable: true
+    environment_specific: false
+    dependencies:
+    - build-failure-triage
+    - code-review
+    - cto-loop
+    - deploy-and-monitor
+    - idea-to-deploy
+    - llm-app-dev
+    - security-safety-review
+    - ultraqa
+    - verification
+    - verification-gate
+    mcp_requirements: []
+    has_supporting_files: false
+    supporting_files: []
+  - name: ulw-research
+    category: ultraloop-workflows
+    description: '[omh] Deep research engine - grounding for specs and decisions: study open-source reference implementations
+      with pinned refs, gather live web evidence with citation discipline, verify contested claims, and distill a decision-grounding
+      dossier that planning consumes; for a decision brief use research'
+    trigger: '[omh] Deep research engine - grounding for specs and decisions: study open-source reference implemen'
+    portable: false
+    environment_specific: false
+    dependencies:
+    - best-practice-research
+    - codebase-onboarding
+    - delivery_boundary
+    - product-docs
+    - research
+    - research-brief
+    - research-department
+    - source-finder
+    - ultrawork
+    - web-research
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  - name: ulw-work
+    category: ultraloop-workflows
+    description: '[omh] Ultrawork - split an accepted plan into disjoint parallel lanes with per-lane acceptance criteria,
+      verification commands, and owners; prevents two lanes editing the same file. Aliases: ulw. Use when the user says: ultrawork,
+      parallel work, parallel implementation, parallel then integrate, high'
+    trigger: '[omh] Ultrawork - split an accepted plan into disjoint parallel lanes with per-lane acceptance crite'
+    portable: false
+    environment_specific: true
+    dependencies:
+    - coordinated_scope
+    - cto-loop
+    - delivery_boundary
+    - durable_checkpoint
+    - idea-to-deploy
+    - llm-app-dev
+    - loop
+    - omh_run_summary
+    - single_owner_persistence
+    - ultrawork
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - references
+  web:
+  - name: web
+    category: web
+    description: No description
+    trigger: ''
+    portable: true
+    environment_specific: false
+    dependencies: []
+    mcp_requirements: []
+    has_supporting_files: true
+    supporting_files:
+    - blocked-page-recovery
+    - DESCRIPTION.md

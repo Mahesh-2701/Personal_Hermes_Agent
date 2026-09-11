@@ -1,0 +1,224 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# HERMES CONFIG TEMPLATE: PRODUCTION / MULTI-AGENT DEPLOYMENT
+# ═══════════════════════════════════════════════════════════════════════════════
+#
+# PURPOSE:
+#   Optimized for production: security first, cost control, reliability.
+#
+# TYPICAL USE:
+#   - Multi-user/multi-agent deployments (Kubernetes, Docker swarm)
+#   - Real workloads (sales, customer support, operations)
+#   - Cost-sensitive (aggressive compression, rate limiting)
+#   - Security-critical (sandboxing, secret redaction)
+#
+# USAGE:
+#   cp templates/config-prod.yaml ~/.hermes/config.yaml
+#   hermes
+#
+# KEY CHANGES FROM DEV:
+#   ✓ Compression ON (aggressive token reclamation)
+#   ✓ Hard stops ON (prevent runaway costs)
+#   ✓ Terminal in Docker (isolated, safe)
+#   ✓ Verbose OFF (logs smaller, cheaper)
+#   ✓ Short timeouts (prevent hanging agents)
+#   ✓ Security ON (Tirith, redaction)
+#   ✓ Telemetry ON (help Nous improve)
+#
+# ═══════════════════════════════════════════════════════════════════════════════
+
+model:
+  default: claude-haiku-4-5-20251001  # ← HAIKU: Cheapest, fast
+  provider: anthropic
+
+database:
+  journal_mode: wal
+
+runtime:
+  nofile_soft_limit: 4096
+
+agent:
+  max_turns: 100  # ← LOWER: Prevent runaway
+  verbose: false  # ← SILENT: Logs only errors
+  reasoning_effort: low  # ← LOW: Cost control
+  personalities: {}
+
+terminal:
+  backend: docker  # ← DOCKER: Sandboxed, safe
+  cwd: .
+  timeout: 60  # ← SHORT: Fail fast on hangs
+  home_mode: auto
+  container_cpu: 0.5  # ← LIMITED: Multi-tenant
+  container_memory: 2048  # ← LIMITED: Multi-tenant
+  container_disk: 10240  # ← LIMITED: Disk quota
+  container_persistent: false  # ← EPHEMERAL: Clean slate
+  docker_mount_cwd_to_workspace: false
+  lifetime_seconds: 300
+
+web:
+  backend: firecrawl
+
+browser:
+  inactivity_timeout: 60  # ← AGGRESSIVE: Kill idle browsers
+  extension_control:
+    enabled: false
+  cloud_provider: local
+
+tool_loop_guardrails:
+  warnings_enabled: true
+  hard_stop_enabled: true  # ← HARD STOPS: Prevent infinite loops
+  warn_after:
+    exact_failure: 1
+    same_tool_failure: 2
+    idempotent_no_progress: 1
+  hard_stop_after:
+    exact_failure: 3  # ← STRICT: Fail fast
+    same_tool_failure: 5
+    idempotent_no_progress: 3
+
+compression:
+  enabled: true  # ← AGGRESSIVE COMPRESSION
+  checkpoint_required: true  # ← REQUIRE: User approval to prune
+  progress_notices: false  # ← SILENT
+  threshold: 0.6  # ← START COMPRESSING AT 60%
+  target_ratio: 0.15  # ← COMPRESS TO 15% (very aggressive)
+  protect_last_n: 10  # ← MINIMAL: Only keep recent
+  min_tail_user_messages: 1
+  max_attempts: 3
+  proactive_prune_tokens: 2048  # ← ENABLED: Proactive pruning
+  proactive_prune_min_result_chars: 2000  # ← AGGRESSIVE
+  proactive_prune_min_reclaim_tokens: 1024  # ← LOWER THRESHOLD
+  protect_first_n: 3
+  codex_gpt55_autoraise: false  # ← NO AUTO-RAISE: Stick to budget
+  codex_app_server_auto: native
+  codex_responses_native: false
+  codex_responses_compact_threshold: 50000  # ← LOWER THRESHOLD
+  idle_compact_after_seconds: 3600  # ← AUTO-COMPACT IDLE SESSIONS
+
+prompt_caching:
+  cache_ttl: 5m
+
+display:
+  compact: true  # ← COMPACT: Minimal output
+  busy_input_mode: queue  # ← QUEUE: Don't interrupt
+  bell_on_complete: false
+  show_reasoning: false  # ← HIDE: No reasoning
+  background_process_notifications: concise  # ← CONCISE
+  streaming: false  # ← BATCH: Smaller responses
+  skin: default
+  interim_assistant_messages: false  # ← HIDE: Only final
+  tool_progress: summary  # ← SUMMARY: Not all
+  cleanup_progress: false  # ← SILENT
+  long_running_notifications: false  # ← SILENT
+  busy_ack_detail: false
+
+stt:
+  enabled: true
+  language: en
+  local:
+    model: tiny  # ← TINY: Fast, CPU-light
+  openai:
+    model: whisper-1
+    language: ''
+
+memory:
+  memory_enabled: true
+  user_profile_enabled: true
+  memory_char_limit: 1000  # ← SMALLER: Cost control
+  user_char_limit: 500
+  nudge_interval: 0  # ← NO NUDGES: Silent operation
+  provider: honcho
+
+delegation:
+  max_iterations: 50  # ← LOWER: Fail fast
+
+skills:
+  creation_nudge_interval: 0  # ← NO NUDGES
+
+command_allowlist:
+  - script execution via heredoc
+
+kanban:
+  review_dispatch: true
+
+code_execution:
+  timeout: 60  # ← SHORT: Prevent runaway
+  max_tool_calls: 25  # ← LOWER: Fewer tool calls
+
+streaming:
+  enabled: false
+
+onboarding:
+  seen:
+    busy_input_prompt: true
+    tool_progress_prompt: true
+    openclaw_residue_cleanup: true
+
+telemetry:
+  shared_metrics:
+    enabled: true  # ← ON: Help Nous
+
+updates:
+  pre_update_backup: true  # ← SAFETY: Always backup
+  backup_keep: 5
+  non_interactive_local_changes: stash
+
+computer_use:
+  backend: cua
+
+session_reset:
+  mode: idle  # ← RESET IDLE SESSIONS
+  idle_minutes: 60  # ← 1 HOUR: Quick cleanup
+  at_hour: 4
+
+group_sessions_per_user: true
+
+platform_toolsets:
+  cli:
+    - browser
+    - clarify
+    - code_execution
+    - cronjob
+    - delegation
+    - file
+    - memory
+    - session_search
+    - skills
+    - terminal
+    - tts
+    - vision
+    - web
+
+  telegram:
+    - browser
+    - clarify
+    - code_execution
+    - cronjob
+    - delegation
+    - file
+    - memory
+    - session_search
+    - skills
+    - terminal
+    - tts
+    - vision
+    - web
+
+mcp_servers:
+  hugging_face:
+    url: https://huggingface.co/mcp
+    auth: oauth
+    enabled: false  # ← DISABLED: Cost control
+
+  supabase:
+    url: https://mcp.supabase.com/mcp
+    auth: oauth
+    enabled: true
+
+security:
+  redact_secrets: true  # ← ENABLED: Hide API keys
+  tirith_enabled: true  # ← SCAN CODE: Detect injection
+  tirith_path: "tirith"
+  tirith_timeout: 5
+  tirith_fail_open: false  # ← FAIL CLOSED: Block suspicious code
+
+_config_version: 40

@@ -1,0 +1,182 @@
+# Hermes Configuration Template
+# Copy and customize this baseline for office environment
+# Version: 1.0
+
+model:
+  default: claude-haiku-4-5-20251001  # Cost-effective default; customize as needed
+  provider: anthropic                  # or 'nous', 'openai', etc.
+
+agent:
+  max_turns: 150
+  verbose: false
+  reasoning_effort: medium
+
+database:
+  journal_mode: wal
+
+runtime:
+  nofile_soft_limit: 4096
+
+# Terminal & Execution
+terminal:
+  backend: local
+  cwd: .
+  timeout: 180
+  home_mode: auto
+
+code_execution:
+  timeout: 300
+  max_tool_calls: 50
+
+# Web & Browser
+web:
+  backend: firecrawl  # Web scraping/extraction
+
+browser:
+  inactivity_timeout: 120
+  extension_control:
+    enabled: false
+  cloud_provider: local
+
+# Tool Loop Safeguards
+tool_loop_guardrails:
+  warnings_enabled: true
+  hard_stop_enabled: false
+  warn_after:
+    exact_failure: 2
+    same_tool_failure: 3
+    idempotent_no_progress: 2
+  hard_stop_after:
+    exact_failure: 5
+    same_tool_failure: 8
+    idempotent_no_progress: 5
+
+# Memory Management
+memory:
+  memory_enabled: true
+  user_profile_enabled: true
+  memory_char_limit: 2200          # Agent's personal memory
+  user_char_limit: 1375            # User profile memory
+  nudge_interval: 10
+  provider: honcho                 # Memory provider
+
+# Skills & Automation
+skills:
+  creation_nudge_interval: 15
+
+delegation:
+  max_iterations: 250
+
+# Display & Streaming
+display:
+  compact: false
+  busy_input_mode: interrupt
+  bell_on_complete: false
+  show_reasoning: false
+  background_process_notifications: concise
+  streaming: true
+  skin: default
+  interim_assistant_messages: true
+  tool_progress: all
+
+streaming:
+  enabled: false  # Set to true for real-time streaming
+
+# Compression & Context
+compression:
+  enabled: true
+  checkpoint_required: false
+  progress_notices: false
+  threshold: 0.5
+  target_ratio: 0.2
+  protect_last_n: 20
+  min_tail_user_messages: 1
+  max_attempts: 3
+  idle_compact_after_seconds: 0
+
+# Platform Configuration
+platforms:
+  telegram:
+    enabled: true
+    home_channel:
+      platform: telegram
+      chat_id: "[OFFICE_CHAT_ID]"
+      name: "[OFFICE_NAME]"
+      user_id: "[OFFICE_USER_ID]"
+
+# Platform Toolsets
+platform_toolsets:
+  cli:
+    - browser
+    - clarify
+    - code_execution
+    - computer_use
+    - cronjob
+    - delegation
+    - file
+    - image_gen
+    - kanban
+    - memory
+    - session_search
+    - skills
+    - terminal
+    - todo
+    - tts
+    - vision
+    - web
+  telegram:
+    - browser
+    - clarify
+    - code_execution
+    - computer_use
+    - cronjob
+    - delegation
+    - file
+    - image_gen
+    - memory
+    - session_search
+    - skills
+    - terminal
+    - todo
+    - tts
+    - vision
+    - web
+
+# Optional: MCP Server Integrations
+mcp_servers:
+  hugging_face:
+    url: https://huggingface.co/mcp
+    auth: oauth
+    enabled: true
+
+  # Zoho CRM (if using CRM integration)
+  # zoho_crm:
+  #   command: /path/to/python
+  #   args:
+  #     - /path/to/scripts/zoho_crm_mcp_server.py
+  #   env:
+  #     ZOHO_CRM_ACCESS_TOKEN: "[REDACTED_TOKEN]"
+  #   timeout: 60
+  #   connect_timeout: 30
+  #   sampling:
+  #     enabled: false
+
+# Telemetry & Updates
+telemetry:
+  shared_metrics:
+    enabled: false
+
+updates:
+  pre_update_backup: false
+  backup_keep: 5
+  non_interactive_local_changes: stash
+
+# Session Management
+session_reset:
+  mode: none
+  idle_minutes: 1440
+  at_hour: 4
+
+group_sessions_per_user: true
+
+_config_version: 40
