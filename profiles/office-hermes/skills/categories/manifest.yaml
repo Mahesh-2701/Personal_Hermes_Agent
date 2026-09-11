@@ -1,0 +1,283 @@
+skills:
+  - name: .curator_backups
+    type: bundled
+  - name: .hub
+    type: bundled
+  - name: addyosmani
+    type: bundled
+  - name: ai-engineering
+    type: bundled
+  - name: apple
+    type: bundled
+  - name: autonomous-ai-agents
+    type: bundled
+  - name: creative
+    type: bundled
+  - name: cybersecurity
+    type: bundled
+  - name: devops
+    type: bundled
+  - name: email
+    type: bundled
+  - name: fullstack-development
+    type: bundled
+  - name: github
+    type: bundled
+  - name: media
+    type: bundled
+  - name: mlops
+    type: bundled
+  - name: note-taking
+    type: bundled
+  - name: oh-my-hermes
+    type: bundled
+  - name: omh-accessibility-audit
+    type: bundled
+  - name: omh-achievements
+    type: bundled
+  - name: omh-adversarial-consensus
+    type: bundled
+  - name: omh-agent-board
+    type: bundled
+  - name: omh-agent-debug
+    type: bundled
+  - name: omh-agent-evaluation
+    type: bundled
+  - name: omh-agent-ops-review
+    type: bundled
+  - name: omh-ai-slop-cleaner
+    type: bundled
+  - name: omh-apple-design
+    type: bundled
+  - name: omh-apps
+    type: bundled
+  - name: omh-ask
+    type: bundled
+  - name: omh-automation-blueprint
+    type: bundled
+  - name: omh-autoresearch-goal
+    type: bundled
+  - name: omh-award-bar-score
+    type: bundled
+  - name: omh-backend
+    type: bundled
+  - name: omh-best-practice-research
+    type: bundled
+  - name: omh-browser
+    type: bundled
+  - name: omh-build-failure-triage
+    type: bundled
+  - name: omh-buzz
+    type: bundled
+  - name: omh-cancel
+    type: bundled
+  - name: omh-capability-toggle
+    type: bundled
+  - name: omh-code-review
+    type: bundled
+  - name: omh-codebase-onboarding
+    type: bundled
+  - name: omh-codebase-uml
+    type: bundled
+  - name: omh-codegraph-refresh
+    type: bundled
+  - name: omh-content-operator
+    type: bundled
+  - name: omh-context-budget-review
+    type: bundled
+  - name: omh-cto-loop
+    type: bundled
+  - name: omh-curriculum-design
+    type: bundled
+  - name: omh-data-analysis
+    type: bundled
+  - name: omh-decide
+    type: bundled
+  - name: omh-decision-recall
+    type: bundled
+  - name: omh-deliverable-package
+    type: bundled
+  - name: omh-deploy-and-monitor
+    type: bundled
+  - name: omh-design-orchestration
+    type: bundled
+  - name: omh-design-quality-gate
+    type: bundled
+  - name: omh-docs
+    type: bundled
+  - name: omh-doctor
+    type: bundled
+  - name: omh-executor-runtime-readiness
+    type: bundled
+  - name: omh-external-connector-readiness
+    type: bundled
+  - name: omh-failure-signal-audit
+    type: bundled
+  - name: omh-feedback-triage
+    type: bundled
+  - name: omh-files
+    type: bundled
+  - name: omh-finance-analysis
+    type: bundled
+  - name: omh-frontend
+    type: bundled
+  - name: omh-frontend-refactor
+    type: bundled
+  - name: omh-gateway-intent-card
+    type: bundled
+  - name: omh-github-event-ops
+    type: bundled
+  - name: omh-github-issue-intake
+    type: bundled
+  - name: omh-harness-session-inventory
+    type: bundled
+  - name: omh-idea-to-deploy
+    type: bundled
+  - name: omh-image-cards
+    type: bundled
+  - name: omh-inference-serving
+    type: bundled
+  - name: omh-instinct-ledger
+    type: bundled
+  - name: omh-jit-learn
+    type: bundled
+  - name: omh-legal-compliance-review
+    type: bundled
+  - name: omh-live-info
+    type: bundled
+  - name: omh-llm-app-dev
+    type: bundled
+  - name: omh-localization-review
+    type: bundled
+  - name: omh-materials-package
+    type: bundled
+  - name: omh-media-input
+    type: bundled
+  - name: omh-meeting-brief
+    type: bundled
+  - name: omh-memory-new
+    type: bundled
+  - name: omh-memory-sync
+    type: bundled
+  - name: omh-meta-router
+    type: bundled
+  - name: omh-model-optimization
+    type: bundled
+  - name: omh-model-setup
+    type: bundled
+  - name: omh-morning-brief
+    type: bundled
+  - name: omh-native-debugging
+    type: bundled
+  - name: omh-operating-rhythm
+    type: bundled
+  - name: omh-ops-observability-card
+    type: bundled
+  - name: omh-ops-review
+    type: bundled
+  - name: omh-paper-learning
+    type: bundled
+  - name: omh-parallel-tools
+    type: bundled
+  - name: omh-people-ops
+    type: bundled
+  - name: omh-performance-goal
+    type: bundled
+  - name: omh-physical-device-readiness
+    type: bundled
+  - name: omh-plan
+    type: bundled
+  - name: omh-product-brief
+    type: bundled
+  - name: omh-production-audit
+    type: bundled
+  - name: omh-prompt-import-readiness
+    type: bundled
+  - name: omh-provider-profile-posture
+    type: bundled
+  - name: omh-refactor-plan
+    type: bundled
+  - name: omh-reliability-review
+    type: bundled
+  - name: omh-report-package
+    type: bundled
+  - name: omh-research-brief
+    type: bundled
+  - name: omh-research-department
+    type: bundled
+  - name: omh-routing
+    type: bundled
+  - name: omh-rules-distill
+    type: bundled
+  - name: omh-run-efficiency
+    type: bundled
+  - name: omh-running-work-board
+    type: bundled
+  - name: omh-rust
+    type: bundled
+  - name: omh-sales-development
+    type: bundled
+  - name: omh-security-safety-review
+    type: bundled
+  - name: omh-skill
+    type: bundled
+  - name: omh-skill-health
+    type: bundled
+  - name: omh-skill-scout
+    type: bundled
+  - name: omh-source-finder
+    type: bundled
+  - name: omh-support-operations
+    type: bundled
+  - name: omh-tech-debt-audit
+    type: bundled
+  - name: omh-terminal
+    type: bundled
+  - name: omh-toolbelt-readiness
+    type: bundled
+  - name: omh-verification-gate
+    type: bundled
+  - name: omh-visual-qa
+    type: bundled
+  - name: omh-voice-input
+    type: bundled
+  - name: omh-web-research
+    type: bundled
+  - name: omh-websearch-setup
+    type: bundled
+  - name: omh-wiki
+    type: bundled
+  - name: omh-workflow-learning
+    type: bundled
+  - name: omh-workspace-audit
+    type: bundled
+  - name: productivity
+    type: bundled
+  - name: research
+    type: bundled
+  - name: smart-home
+    type: bundled
+  - name: social-media
+    type: bundled
+  - name: software-development
+    type: bundled
+  - name: ulw-context
+    type: bundled
+  - name: ulw-interview
+    type: bundled
+  - name: ulw-loop
+    type: bundled
+  - name: ulw-maestro
+    type: bundled
+  - name: ulw-perf
+    type: bundled
+  - name: ulw-plan
+    type: bundled
+  - name: ulw-qa
+    type: bundled
+  - name: ulw-research
+    type: bundled
+  - name: ulw-work
+    type: bundled
+  - name: web
+    type: bundled

@@ -1,0 +1,238 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Hermes Memory Store Schema",
+  "description": "Core memory storage schema for agent's personal notes, environment facts, and learned conventions. Stored in MEMORY.md with § (section sign) delimiters.",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Schema version (semver)",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "default": "1.0.0"
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp of memory creation"
+        },
+        "last_updated": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp of last modification"
+        },
+        "total_chars": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2200,
+          "description": "Total character count (hard limit 2200)"
+        },
+        "entry_count": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 20,
+          "description": "Number of entries (recommended max 15)"
+        },
+        "usage_percent": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Utilization percentage (warn at 80%)"
+        }
+      },
+      "required": ["created_at", "last_updated", "total_chars"]
+    },
+    "entries": {
+      "type": "array",
+      "description": "Memory entries, each separated by § in storage",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for entry (UUID or index-based)",
+            "pattern": "^[a-zA-Z0-9_-]+$"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "environment",
+              "convention",
+              "lesson_learned",
+              "project_context",
+              "workflow",
+              "tool_quirk",
+              "completion_diary",
+              "policy",
+              "office_context"
+            ],
+            "description": "Entry classification for organization"
+          },
+          "content": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 300,
+            "description": "Entry text (multiline OK, compact & dense preferred)"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When this entry was added"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When this entry was last modified"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z_]+$"
+            },
+            "description": "Optional searchable tags (e.g., 'database', 'ci_cd', 'security')"
+          },
+          "expires_at": {
+            "type": ["string", "null"],
+            "format": "date-time",
+            "description": "Optional expiration date; null means indefinite"
+          },
+          "priority": {
+            "type": "string",
+            "enum": ["low", "medium", "high"],
+            "default": "medium",
+            "description": "Retention priority if capacity needs consolidation"
+          },
+          "action_required": {
+            "type": "boolean",
+            "default": false,
+            "description": "Flag if entry needs follow-up (for workflow tracking)"
+          }
+        },
+        "required": ["id", "category", "content", "created_at"]
+      }
+    },
+    "guidelines": {
+      "type": "object",
+      "description": "Storage and management guidelines",
+      "properties": {
+        "save_proactively": {
+          "type": "array",
+          "description": "Categories to save automatically",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "User preferences and workflow habits",
+            "Environment facts (OS, tools, versions)",
+            "Corrections to previous assumptions",
+            "Project conventions and configurations",
+            "Completed work (dated entries)",
+            "Discovered tool quirks and workarounds"
+          ]
+        },
+        "skip_these": {
+          "type": "array",
+          "description": "Do NOT save these categories",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "Trivial or obvious facts",
+            "Easily re-discoverable information (web-searchable)",
+            "Raw data dumps or code blocks",
+            "Session-specific ephemera",
+            "Content already documented in config/SOUL/AGENTS files"
+          ]
+        },
+        "consolidation_strategy": {
+          "type": "string",
+          "enum": ["merge_overlapping", "remove_low_priority", "archive_old"],
+          "description": "Strategy when memory reaches 80% capacity"
+        },
+        "min_entry_length": {
+          "type": "integer",
+          "default": 5,
+          "description": "Minimum characters per entry (prevents noise)"
+        },
+        "recommended_max_entries": {
+          "type": "integer",
+          "default": 15,
+          "description": "Recommended max entries (hard max ~20)"
+        }
+      }
+    },
+    "retention_policy": {
+      "type": "object",
+      "properties": {
+        "active_threshold_days": {
+          "type": "integer",
+          "default": 90,
+          "description": "Days before entry marked as 'archived'"
+        },
+        "archive_retention_years": {
+          "type": "integer",
+          "default": 1,
+          "description": "How long archived entries retained"
+        },
+        "auto_purge": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically purge after retention window"
+        },
+        "sensitive_data_patterns": {
+          "type": "array",
+          "description": "Regex patterns for data to never store (credentials, PII)",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "password[\\s]*=",
+            "api[_-]?key[\\s]*=",
+            "token[\\s]*=",
+            "secret[\\s]*=",
+            "\\b\\d{3}-\\d{2}-\\d{4}\\b",
+            "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"
+          ]
+        }
+      }
+    }
+  },
+  "required": ["version", "metadata", "entries"],
+  "examples": [
+    {
+      "version": "1.0.0",
+      "metadata": {
+        "created_at": "2026-09-10T10:00:00Z",
+        "last_updated": "2026-09-11T15:30:00Z",
+        "total_chars": 1450,
+        "entry_count": 10,
+        "usage_percent": 65.9
+      },
+      "entries": [
+        {
+          "id": "env_001",
+          "category": "environment",
+          "content": "Office runs Ubuntu 22.04 LTS on main workstations; dev server at 10.0.1.50 runs Debian 12. Docker & Podman installed. PostgreSQL 16 on DB server.",
+          "created_at": "2026-01-15T09:00:00Z",
+          "updated_at": "2026-09-10T14:20:00Z",
+          "tags": ["infrastructure", "ubuntu", "postgres"],
+          "priority": "high",
+          "action_required": false
+        },
+        {
+          "id": "conv_001",
+          "category": "convention",
+          "content": "Project uses tabs (4 spaces), 100-char line width, Google-style docstrings. CI via GitHub Actions. Tests in ./tests/ run with 'make test'. Merges require 2 approvals.",
+          "created_at": "2026-02-01T08:30:00Z",
+          "updated_at": "2026-09-09T11:45:00Z",
+          "tags": ["coding_standards", "ci_cd", "github"],
+          "priority": "high",
+          "action_required": false
+        }
+      ]
+    }
+  ]
+}

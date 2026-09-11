@@ -1,0 +1,235 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# HERMES CONFIG TEMPLATE: BUDGET-CONSCIOUS / COST-OPTIMIZED
+# ═══════════════════════════════════════════════════════════════════════════════
+#
+# PURPOSE:
+#   Minimize API costs while maintaining usability.
+#   Trade quality/capability for cost control.
+#
+# TYPICAL USE:
+#   - Startups, cost-limited deployments
+#   - Batch processing (nightly jobs, low-traffic periods)
+#   - Per-user quota management
+#   - Fallback to cheaper models (Haiku instead of Sonnet)
+#
+# COST OPTIMIZATIONS:
+#   ✓ Always use cheapest model (Haiku)
+#   ✓ Aggressive compression (reduce token usage by 50-80%)
+#   ✓ Prompt caching (reuse cached context, 90% discount)
+#   ✓ Smaller memory windows (less context to maintain)
+#   ✓ Proactive output pruning (trim verbose tool outputs)
+#   ✓ Disable expensive features (image gen, streaming, delegation)
+#
+# RESULT:
+#   ~30-50% cost reduction vs. default config
+#
+# ═══════════════════════════════════════════════════════════════════════════════
+
+model:
+  default: claude-haiku-4-5-20251001  # ← CHEAPEST MODEL
+  provider: anthropic
+
+# OPTIONAL FALLBACK (if you want automatic failover to cheaper provider):
+# fallback_model:
+#   provider: openrouter
+#   model: mistral/mistral-7b  # Even cheaper than Haiku
+
+database:
+  journal_mode: wal
+
+runtime:
+  nofile_soft_limit: 2048
+
+agent:
+  max_turns: 50  # ← AGGRESSIVE: Finish in fewer turns
+  verbose: false
+  reasoning_effort: low  # ← ALWAYS LOW EFFORT
+  personalities: {}
+
+terminal:
+  backend: docker
+  cwd: .
+  timeout: 30  # ← VERY SHORT: Fail fast
+  home_mode: auto
+  container_cpu: 0.25  # ← MINIMAL: Shared resources
+  container_memory: 1024  # ← MINIMAL
+  container_disk: 5120  # ← MINIMAL
+  container_persistent: false
+  docker_mount_cwd_to_workspace: false
+  lifetime_seconds: 300
+
+web:
+  backend: firecrawl  # ← Could use "raw" for free (lower quality)
+
+browser:
+  inactivity_timeout: 30  # ← KILL FAST
+  extension_control:
+    enabled: false
+  cloud_provider: local
+
+tool_loop_guardrails:
+  warnings_enabled: false  # ← SILENT: Logs are expensive
+  hard_stop_enabled: true
+  warn_after:
+    exact_failure: 1
+    same_tool_failure: 1
+    idempotent_no_progress: 1
+  hard_stop_after:
+    exact_failure: 2
+    same_tool_failure: 3
+    idempotent_no_progress: 2
+
+compression:
+  enabled: true  # ← ESSENTIAL FOR COST CONTROL
+  checkpoint_required: false  # ← AGGRESSIVE: Auto-prune
+  progress_notices: false
+  threshold: 0.4  # ← START EARLY: 40% full
+  target_ratio: 0.1  # ← VERY AGGRESSIVE: Compress to 10%
+  protect_last_n: 5  # ← MINIMAL
+  min_tail_user_messages: 1
+  max_attempts: 2
+  proactive_prune_tokens: 4096  # ← AGGRESSIVE PRUNING
+  proactive_prune_min_result_chars: 1000  # ← VERY AGGRESSIVE
+  proactive_prune_min_reclaim_tokens: 512  # ← LOWER THRESHOLD
+  protect_first_n: 2
+  codex_gpt55_autoraise: false
+  codex_app_server_auto: native
+  codex_responses_native: false
+  codex_responses_compact_threshold: 10000  # ← VERY LOW
+  idle_compact_after_seconds: 600  # ← COMPACT OFTEN
+
+prompt_caching:
+  cache_ttl: 24h  # ← EXTENDED: 24-hour cache (90% discount)
+
+display:
+  compact: true
+  busy_input_mode: queue
+  bell_on_complete: false
+  show_reasoning: false
+  background_process_notifications: silent  # ← SILENT
+  streaming: false  # ← BATCH: Cheaper
+  skin: minimal
+  interim_assistant_messages: false
+  tool_progress: none  # ← SILENT: Don't log
+  cleanup_progress: false
+  long_running_notifications: false
+  busy_ack_detail: false
+
+stt:
+  enabled: false  # ← DISABLED: Save cost
+  language: en
+  local:
+    model: tiny
+  openai:
+    model: whisper-1
+    language: ''
+
+memory:
+  memory_enabled: false  # ← DISABLED: Save storage/retrieval cost
+  user_profile_enabled: false
+  memory_char_limit: 500
+  user_char_limit: 250
+  nudge_interval: 0
+  provider: honcho
+
+delegation:
+  max_iterations: 20  # ← MINIMAL
+
+skills:
+  creation_nudge_interval: 0
+
+command_allowlist:
+  - script execution via heredoc
+
+kanban:
+  review_dispatch: false  # ← DISABLED: Save cost
+
+code_execution:
+  timeout: 30  # ← VERY SHORT
+  max_tool_calls: 10  # ← MINIMAL
+
+streaming:
+  enabled: false
+
+onboarding:
+  seen:
+    busy_input_prompt: true
+    tool_progress_prompt: true
+    openclaw_residue_cleanup: true
+
+telemetry:
+  shared_metrics:
+    enabled: false  # ← OFF: Reduce overhead
+
+updates:
+  pre_update_backup: false  # ← SKIP: Saves disk
+  backup_keep: 2
+  non_interactive_local_changes: stash
+
+computer_use:
+  backend: cua
+
+session_reset:
+  mode: idle
+  idle_minutes: 30  # ← VERY AGGRESSIVE
+  at_hour: 4
+
+group_sessions_per_user: true
+
+platform_toolsets:
+  cli:
+    - clarify
+    - code_execution
+    - cronjob
+    - delegation
+    - file
+    - memory
+    - session_search
+    - terminal
+    - web
+
+# Disable expensive MCP servers
+mcp_servers:
+  hugging_face:
+    url: https://huggingface.co/mcp
+    auth: oauth
+    enabled: false  # ← DISABLED: Cost
+
+  supabase:
+    url: https://mcp.supabase.com/mcp
+    auth: oauth
+    enabled: false  # ← DISABLED: Cost
+
+_config_version: 40
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# FURTHER COST-CUTTING MEASURES (Beyond Config)
+# ═══════════════════════════════════════════════════════════════════════════════
+#
+# 1. Use local models (Ollama + Mistral-7B)
+#    config: model.provider = ollama, model.default = mistral
+#    cost: $0 (runs on your hardware)
+#
+# 2. Use OpenRouter with cheaper routing
+#    fallback_model.provider = openrouter
+#    fallback_model.model = together/mistral-7b
+#    cost: $0.27/1M tokens (vs Haiku $0.80/1M)
+#
+# 3. Batch requests (collect multiple queries, process together)
+#    Uses same conversation context, amortizes overhead
+#
+# 4. Reduce context windows
+#    Smaller prompts = fewer tokens = less cost
+#    Trade detail for savings
+#
+# 5. Pre-cache static prompts
+#    Use prompt_caching for repeated instructions
+#    90% discount on cached content
+#
+# 6. Process during off-peak hours
+#    Some providers (Bedrock, custom endpoints) offer time-based pricing
+#
+# 7. Monitor token usage per user/role
+#    Implement per-user quotas, alerts at thresholds
+#
+# ═══════════════════════════════════════════════════════════════════════════════

@@ -1,0 +1,16 @@
+# Escalation Protocol
+
+escalation_triggers:
+  - condition: "API rate limit or quota exceeded"
+    action: "Switch to fallback model or request user intervention"
+  - condition: "Destructive operation requested without confirmation"
+    action: "Halt execution and request explicit user sign-off"
+  - condition: "Test suite failure blocking deployment"
+    action: "Analyze root cause, report failure, and request guidance"
+  - condition: "Security vulnerability detected in dependency"
+    action: "Warn user immediately and propose secure patch"
+
+fallback_hierarchy:
+  primary_model: "claude-haiku-4-5-20251001"
+  fallback_provider: "nous"
+  fallback_model: "solar-pro"

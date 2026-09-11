@@ -1,0 +1,968 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# HERMES AGENT CONFIGURATION — BASE / PORTABLE DEFAULTS
+# ═══════════════════════════════════════════════════════════════════════════════
+#
+# This is the canonical, portable reference for ALL Hermes runtime settings,
+# guardrails, memory, compression, display, and tool permissions.
+#
+# WHO NEEDS THIS:
+#   - Agents onboarding a new Hermes installation
+#   - Operators tuning performance/safety guardrails
+#   - Auditors reviewing permission matrices and risk levels
+#   - Developers integrating Hermes into new platforms
+#
+# HOW THIS WORKS:
+#   1. Read this file to understand what each setting does
+#   2. Copy templates/* for environment-specific overrides
+#   3. Merge local config.yaml on top of these defaults
+#   4. Restart Hermes for changes to take effect
+#
+# SCHEMA VERSION: 40 (see _config_version at end)
+#
+# ═══════════════════════════════════════════════════════════════════════════════
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 1. MODEL & LLM SELECTION
+# ─────────────────────────────────────────────────────────────────────────────
+# Hermes routes all completions through a pluggable provider system. Each
+# provider translates to a distinct API (anthropic, openai, bedrock, etc.).
+# The model field is provider-specific — it MUST match that provider's actual
+# model ID or behavior is undefined.
+#
+model:
+  # Primary completion model. Localized to a provider via "provider" key below.
+  # Recommended for most tasks: claude-haiku-4-5-20251001 (fast, low-cost)
+  # For high-reasoning: claude-3-5-sonnet (slower, better accuracy)
+  # For extended context: claude-3-5-haiku (4K context, cheaper)
+  default: claude-haiku-4-5-20251001
+
+  # Provider slug. Routes to implementation in providers/llm.py:
+  #   - anthropic    (Anthropic Claude)
+  #   - openai       (OpenAI GPT)
+  #   - bedrock      (AWS Bedrock — requires boto3)
+  #   - openrouter   (OpenRouter proxy — routes to any model)
+  #   - nous         (Nous Portal — OAuth required)
+  #   - ollama       (Local open-weights model)
+  provider: anthropic
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 2. DATABASE CONFIGURATION
+# ─────────────────────────────────────────────────────────────────────────────
+# Hermes uses SQLite3 for persistent state: sessions, memory, skills, etc.
+# Journal mode is critical for concurrency (multiple agents, background jobs).
+#
+database:
+  # Write-Ahead Logging (WAL mode). Alternatives: "delete" (legacy, slower),
+  # "truncate" (middle ground). WAL is strongly recommended for multi-agent
+  # or high-concurrency setups — allows reads while writes are in flight.
+  journal_mode: wal
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 3. RUNTIME ENVIRONMENT
+# ─────────────────────────────────────────────────────────────────────────────
+# OS-level resource limits and session lifecycle.
+#
+runtime:
+  # Max open file descriptors per Hermes process. Bumped for agents managing
+  # many sockets, FDs for tool subprocesses. Default macOS: 256, Linux: 1024.
+  # Increase if you see "Too many open files" errors. Cannot exceed OS hard limit.
+  nofile_soft_limit: 4096
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 4. AGENT BEHAVIOR & REASONING
+# ─────────────────────────────────────────────────────────────────────────────
+# Controls how the AI agent thinks, loops, and handles tasks.
+#
+agent:
+  # Max agentic loop iterations. When hit, agent forcefully stops and returns
+  # "ran out of turns" error. Safety valve against infinite loops or runaway
+  # cost. Typical tasks use 5–20 turns; complex debugging may need 50+.
+  max_turns: 150
+
+  # Whether to print internal agent reasoning to stderr (for debugging).
+  # DANGER: Sensitive — may leak prompts, user queries, or API responses.
+  # Use only in development with properly-scoped output redirection.
+  verbose: false
+
+  # Effort level for Claude models' extended thinking / reasoning.
+  # Options: "low" (fast, cheaper), "medium" (balanced), "high" (slow, pricey).
+  # Applies only to models that support it (Claude Sonnet/Opus). Haiku ignores.
+  reasoning_effort: medium
+
+  # Personality overrides (for multi-role setups). Maps role/channel -> prompt.
+  # Keyed by (provider, model, role), value is a string to prepend to prompts.
+  # E.g. { "cmo": "You are marketing-focused..." } filters responses for CMO.
+  personalities: {}
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 5. TERMINAL / SHELL EXECUTION
+# ─────────────────────────────────────────────────────────────────────────────
+# Controls how Hermes executes system commands, including containerization.
+#
+terminal:
+  # Execution backend. Options:
+  #   - "local"     (native shell, no isolation — fast, high risk)
+  #   - "docker"    (containerized, safer — requires Docker daemon)
+  #   - "sandbox"   (WASM or VM-based, experimental)
+  backend: local
+
+  # Initial working directory for terminal commands.
+  # Relative paths resolve from here. "." = user home.
+  # Can be overridden per-command via cli args.
+  cwd: .
+
+  # Timeout in seconds for a single terminal command.
+  # If exceeded, command is killed and error is returned.
+  # Very long-running operations (builds, deploys) should increase this.
+  timeout: 180
+
+  # Home directory expansion mode:
+  #   - "auto"      (detect from $HOME or pwd, safest default)
+  #   - "literal"   (use $HOME as-is, no expansion)
+  #   - "disabled"  (never expand ~, fail if seen)
+  home_mode: auto
+
+  # ─ Docker-specific (backend: docker only) ───────────────────────────────
+  # Docker runs commands in isolated containers. Tune resource limits here.
+
+  # CPU limit (in logical cores). 1 = single core, 0.5 = half core.
+  # Prevents runaway CPU-bound processes from crashing host.
+  container_cpu: 1
+
+  # Memory limit in MB. 5120 MB = 5 GB. OOMKiller stops processes that exceed.
+  # Increase for memory-hungry tasks (ML training, large file processing).
+  container_memory: 5120
+
+  # Disk space available to container (MB). 51200 MB = 50 GB ephemeral storage.
+  container_disk: 51200
+
+  # Whether disk is persistent across commands. "true" = same /tmp for lifetime.
+  # "false" = fresh /tmp per command (safer, slower).
+  container_persistent: true
+
+  # Mount current working directory into container at /workspace.
+  # "true" = changes persist back to host. "false" = read-only snapshot.
+  docker_mount_cwd_to_workspace: false
+
+  # Container lifetime. After this many seconds of inactivity, container exits.
+  # Reduces resource waste; restart is cheap (seconds).
+  lifetime_seconds: 300
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 6. WEB ACCESS & BROWSING
+# ─────────────────────────────────────────────────────────────────────────────
+# Controls how Hermes fetches and processes web content.
+#
+web:
+  # Backend for web fetching. Options:
+  #   - "firecrawl"  (API-based, high quality LLM extraction, $$$)
+  #   - "raw"        (simple curl-based fetch, fallback)
+  #   - "playwright" (browser-based, JavaScript support, slower)
+  backend: firecrawl
+
+browser:
+  # Timeout in seconds for browser operations (page load, click, etc.).
+  # If exceeded, operation fails and error is raised.
+  inactivity_timeout: 120
+
+  # Extension control (uBlock, privacy tools, etc.). Disabled by default.
+  extension_control:
+    enabled: false
+
+  # Browser backend when using browser tools. Options:
+  #   - "local"  (Chrome/Safari on same machine)
+  #   - "cloud"  (BrowserBase, Browserless, or other cloud provider)
+  cloud_provider: local
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 7. TOOL LOOP GUARDRAILS (Safety & Runaway Prevention)
+# ─────────────────────────────────────────────────────────────────────────────
+# Detects failure patterns (same tool failing repeatedly, no progress) and
+# applies warnings or hard stops to prevent infinite loops or cost explosion.
+#
+# Example scenario:
+#   Agent calls tool_A → fails. Calls tool_A again → fails.
+#   warn_after.same_tool_failure = 3 → after 3rd failure, warn user.
+#   hard_stop_after.same_tool_failure = 8 → after 8th, force stop.
+#
+tool_loop_guardrails:
+  # Enable warnings? "true" = print notices to console/logs.
+  warnings_enabled: true
+
+  # Enable hard stops? "true" = forcefully terminate when thresholds hit.
+  hard_stop_enabled: false
+
+  # Thresholds for warnings (notice only, doesn't stop):
+  warn_after:
+    # Same exact tool call fails N times in a row.
+    exact_failure: 2
+    # Any tool in the same family fails N times.
+    same_tool_failure: 3
+    # Tool succeeds but produces no new state/output N times (idempotent).
+    idempotent_no_progress: 2
+
+  # Thresholds for hard stops (terminates execution immediately):
+  hard_stop_after:
+    exact_failure: 5
+    same_tool_failure: 8
+    idempotent_no_progress: 5
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 8. CONTEXT COMPRESSION (Token Budget Management)
+# ─────────────────────────────────────────────────────────────────────────────
+# Hermes automatically removes low-value messages when the conversation
+# approaches token limits. This keeps costs low and latency predictable.
+#
+# How it works:
+#   1. Track token usage as conversation grows.
+#   2. When usage > threshold * context_window, enter compression mode.
+#   3. Remove oldest, least-important messages.
+#   4. Keep most recent N messages intact (protect_last_n).
+#   5. Retry up to max_attempts if compression fails.
+#
+compression:
+  # Enable automatic compression? "true" = active (recommended).
+  enabled: true
+
+  # Skip compression if no explicit user checkpoint set? If true, compression
+  # waits for user acknowledgment (/"verify checkpoint") before pruning.
+  # "false" = proactive pruning (may discard user intent without asking).
+  checkpoint_required: false
+
+  # Show progress notices as compression happens? Useful for debugging,
+  # noisy in production.
+  progress_notices: false
+
+  # Trigger compression when usage > threshold * context_limit.
+  # 0.5 = compress when 50% full. Lower = more proactive (safer, churn).
+  # 0.8 = compress when 80% full (aggressive, risks hitting limit).
+  threshold: 0.5
+
+  # Target compression ratio after pruning.
+  # 0.2 = remove tokens until usage is 20% of limit. Lower = smaller
+  # conversations (cheaper, less context), higher = keep more (expensive).
+  target_ratio: 0.2
+
+  # Protect the last N messages from removal. Always keep recent context
+  # so agent doesn't lose active task thread. Recommended: 15–30.
+  protect_last_n: 20
+
+  # Minimum user messages to retain. Even if compressed to near-empty,
+  # keep at least this many user inputs (preserves intent).
+  min_tail_user_messages: 1
+
+  # First N messages (preamble, system context) are always protected.
+  # Prevents loss of system prompt or initial setup.
+  protect_first_n: 3
+
+  # Max attempts to compress before giving up. If compression fails N times,
+  # agent raises error (context too dynamic to compress safely).
+  max_attempts: 3
+
+  # ─ Proactive pruning (experimental) ──────────────────────────────────
+  # Automatically remove verbose tool outputs BEFORE token limit is hit.
+  # Trades detail for cost.
+
+  # Proactively remove tool output if result > this many characters.
+  # 8000 = typical multi-line JSON. Increase to keep more detail.
+  proactive_prune_min_result_chars: 8000
+
+  # Only bother pruning if it reclaims > this many tokens.
+  # 4096 tokens ~ 15KB text. Must be > 0 to enable.
+  proactive_prune_min_reclaim_tokens: 4096
+
+  # Tokens to target for reclamation per pruning cycle.
+  # 0 = disabled (don't prunable outputs proactively).
+  proactive_prune_tokens: 0
+
+  # ─ Codex-specific (agentic code gen) ────────────────────────────────
+  # Codex CLI has its own compression for long-running coding tasks.
+  # These control handoff to Codex's native compression.
+
+  # Auto-raise context if Codex needs it? "true" = increase token budget.
+  codex_gpt55_autoraise: true
+
+  # Codex app server strategy. Options:
+  #   - "native"  (use Codex's built-in server)
+  #   - "hermes"  (route through Hermes Gateway)
+  codex_app_server_auto: native
+
+  # Whether Codex returns raw or compressed responses.
+  codex_responses_native: false
+
+  # Threshold (chars) to switch to compact response mode.
+  codex_responses_compact_threshold: 200000
+
+  # ─ Idle background tasks ───────────────────────────────────────────
+  # Automatically compact conversation in idle sessions.
+
+  # Compact idle sessions after N seconds with no activity.
+  # 0 = disabled. 3600 = 1 hour.
+  idle_compact_after_seconds: 0
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 9. PROMPT CACHING (LLM Cache)
+# ─────────────────────────────────────────────────────────────────────────────
+# Some LLM providers (Claude, OpenAI) cache repeated prompt prefixes for cost.
+# This controls TTL and behavior.
+#
+prompt_caching:
+  # Time-to-live for cached prompts.
+  # "5m" = 5 minutes. "1h" = 1 hour. "0" = disabled.
+  # LLM provider ultimately controls actual lifetime.
+  cache_ttl: 5m
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 10. DISPLAY & UX (What the User Sees)
+# ─────────────────────────────────────────────────────────────────────────────
+# Controls logging, progress indicators, and output formatting.
+#
+display:
+  # Compact mode: minimize newlines, summaries instead of full output.
+  # Useful for mobile/narrow terminals. "true" = terse.
+  compact: false
+
+  # How to handle interruptions while busy. Options:
+  #   - "interrupt" (stop immediately when user types)
+  #   - "queue"     (queue input, finish current operation first)
+  #   - "ignore"    (user cannot interrupt)
+  busy_input_mode: interrupt
+
+  # Ring system bell (audible ding) when task completes.
+  # Useful for long-running tasks so you know when done.
+  bell_on_complete: false
+
+  # Show LLM's internal reasoning (thinking, chain-of-thought)?
+  # Only works with models that support reasoning (Claude Sonnet).
+  # "true" = show full reasoning trace.
+  show_reasoning: false
+
+  # Background process notifications. Options:
+  #   - "concise" (one-liner per process)
+  #   - "verbose" (full output)
+  #   - "silent"  (no notifications)
+  background_process_notifications: concise
+
+  # Enable streaming output? "true" = show tokens as they arrive (lower latency).
+  # "false" = wait for full response (batched, sometimes faster).
+  streaming: true
+
+  # Visual theme. Options: "default", "dark", "light", "minimal".
+  # Only affects CLI display, not web UI.
+  skin: default
+
+  # Show partial assistant messages while generating?
+  # "true" = incremental output, "false" = show only when done.
+  interim_assistant_messages: true
+
+  # Tool execution progress reporting. Options:
+  #   - "all"     (show every tool call and result)
+  #   - "summary" (show tool name and final status only)
+  #   - "none"    (silent)
+  tool_progress: all
+
+  # Show progress as messages are cleaned up (compression)?
+  # "true" = verbose, "false" = silent.
+  cleanup_progress: false
+
+  # Enable notifications for long-running operations?
+  # "true" = periodic "still working..." messages.
+  long_running_notifications: true
+
+  # Busy acknowledgment verbosity. "true" = explain what's happening.
+  # "false" = just print status marker.
+  busy_ack_detail: true
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 11. SPEECH-TO-TEXT (STT)
+# ─────────────────────────────────────────────────────────────────────────────
+# Transcribes voice input to text. Used by Telegram, mobile, voice assistants.
+#
+stt:
+  # Enable voice input? "true" = transcribe audio to text.
+  enabled: true
+
+  # Default language for transcription (ISO 639-1 code).
+  # "en" = English, "es" = Spanish, etc.
+  language: en
+
+  # Local STT engine (if using on-device transcription).
+  local:
+    # Model size: "tiny", "base", "small", "medium", "large".
+    # Smaller = faster + less CPU, Larger = better accuracy.
+    model: base
+
+  # OpenAI Whisper API settings (cloud-based transcription).
+  openai:
+    # Whisper model version.
+    model: whisper-1
+    # Override language detection (leave empty to auto-detect).
+    language: ''
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 12. MEMORY SYSTEM (Long-Term User/Session Context)
+# ─────────────────────────────────────────────────────────────────────────────
+# Hermes maintains two types of memory across sessions:
+#   1. User profile — stable facts about the user (name, role, preferences)
+#   2. Session memory — episodic facts from recent sessions (context, prior work)
+#
+# Memory is stored in database, synced via "honcho" provider (see integrations).
+#
+memory:
+  # Enable memory system? "true" = recall across sessions, "false" = amnesia.
+  memory_enabled: true
+
+  # Enable user profile (stable, long-lived facts)?
+  # "true" = build and maintain user metadata.
+  user_profile_enabled: true
+
+  # Character limit for session memory per entry.
+  # Higher = richer context (more expensive to retrieve), lower = efficiency.
+  # Typical range: 1000–5000 chars.
+  memory_char_limit: 2200
+
+  # Character limit for user profile per entry.
+  # Smaller than memory_char_limit (user is stable, sessions are dynamic).
+  user_char_limit: 1375
+
+  # Suggest memory updates after N turns of conversation.
+  # "nudge_interval: 10" = after 10 messages, prompt user to review/update memory.
+  # 0 = never nudge.
+  nudge_interval: 10
+
+  # Backend provider for memory storage. Options:
+  #   - "honcho"   (Hermes' native provider — local SQLite or hosted)
+  #   - "pinecone" (vector DB, for semantic search)
+  #   - "noop"     (disabled, no persistence)
+  provider: honcho
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 13. DELEGATION (Task Handoff to Other Agents)
+# ─────────────────────────────────────────────────────────────────────────────
+# Hermes can delegate sub-tasks to other agents (Codex, Claude Code, etc.)
+# and track their work. This controls delegation behavior.
+#
+delegation:
+  # Maximum iterations for a delegated task.
+  # If agent doesn't finish by this count, task is forcefully terminated.
+  # Prevents infinite loops in sub-agents.
+  max_iterations: 250
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 14. SKILLS SYSTEM
+# ─────────────────────────────────────────────────────────────────────────────
+# Hermes' skill library is user-extensible. This controls skill discovery,
+# installation, and suggestions.
+#
+skills:
+  # Prompt user to create a new skill after N turns where pattern is recognized.
+  # "15" = after 15 messages, suggest "hey, want to save this as a reusable skill?".
+  # 0 = never suggest.
+  creation_nudge_interval: 15
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 15. COMMAND ALLOWLIST (Security / Shell Execution Restrictions)
+# ─────────────────────────────────────────────────────────────────────────────
+# Whitelist of shell command patterns that are allowed. If a command doesn't
+# match ANY pattern, it's rejected. This prevents unauthorized system access.
+#
+# Syntax:
+#   - "script execution via heredoc"  = allow < < EOF ... EOF
+#   - "grep"                          = allow any grep invocation
+#   - "find /path"                    = allow find ONLY in /path
+#
+# SECURITY: This is advisory — not a sandbox. A determined attacker could
+# bypass it. Use for guardrails only, combine with OS-level sandboxing
+# (SELinux, containers) for real security.
+#
+command_allowlist:
+  - script execution via heredoc
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 16. KANBAN SYSTEM (Task Tracking)
+# ─────────────────────────────────────────────────────────────────────────────
+# Hermes maintains a task queue. This controls queue behavior.
+#
+kanban:
+  # Automatically dispatch review tasks?
+  # "true" = process the queue proactively.
+  review_dispatch: true
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 17. CODE EXECUTION (Sandbox / Subprocess Control)
+# ─────────────────────────────────────────────────────────────────────────────
+# Controls how Hermes runs Python, Node, etc. code.
+#
+code_execution:
+  # Timeout in seconds for a code execution.
+  # If exceeded, process is killed and error raised.
+  timeout: 300
+
+  # Maximum number of tool calls (code blocks) per agent invocation.
+  # Prevents runaway agentic loops (agent keeps adding code blocks).
+  max_tool_calls: 50
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 18. STREAMING (Response Streaming)
+# ─────────────────────────────────────────────────────────────────────────────
+# LLM API response streaming (tokens arrive incrementally).
+#
+streaming:
+  # Enable streaming? "true" = lower latency, better UX.
+  # "false" = wait for full response (sometimes faster for short responses).
+  enabled: false
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 19. ONBOARDING (User Onboarding State)
+# ─────────────────────────────────────────────────────────────────────────────
+# Tracks which onboarding prompts user has already seen (don't repeat).
+#
+onboarding:
+  seen:
+    busy_input_prompt: true
+    tool_progress_prompt: true
+    openclaw_residue_cleanup: true
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 20. TELEMETRY & METRICS
+# ─────────────────────────────────────────────────────────────────────────────
+# Anonymous usage analytics. Helps Nous understand how Hermes is used.
+#
+telemetry:
+  shared_metrics:
+    # Send anonymous usage stats to Nous?
+    # "true" = share (no PII, hashed), "false" = opt out.
+    enabled: false
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 21. UPDATES & VERSIONING
+# ─────────────────────────────────────────────────────────────────────────────
+# Handles Hermes self-updates.
+#
+updates:
+  # Backup config before auto-update?
+  # "true" = creates backup, "false" = no backup (risky if update fails).
+  pre_update_backup: false
+
+  # Number of backups to keep.
+  backup_keep: 5
+
+  # How to handle local changes during update. Options:
+  #   - "stash"      (save local changes, apply after update)
+  #   - "reset"      (discard local changes)
+  #   - "fail"       (abort update if local changes exist)
+  non_interactive_local_changes: stash
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 22. COMPUTER USE (Desktop Automation)
+# ─────────────────────────────────────────────────────────────────────────────
+# Controls desktop automation (mouse, keyboard, screenshots).
+#
+computer_use:
+  # Backend for desktop control. Options:
+  #   - "cua"      (Cursor-Union API — recommended)
+  #   - "pyautogui" (local, limited platform support)
+  #   - "direct"    (native via xdotool/osascript)
+  backend: cua
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 23. SESSION LIFECYCLE
+# ─────────────────────────────────────────────────────────────────────────────
+# Controls session persistence, reset, and grouping.
+#
+session_reset:
+  # Reset behavior. Options:
+  #   - "none"    (never auto-reset)
+  #   - "daily"   (reset once per day)
+  #   - "weekly"  (reset once per week)
+  #   - "idle"    (reset after idle_minutes of inactivity)
+  mode: none
+
+  # If mode is "idle", reset after this many minutes of no activity.
+  idle_minutes: 1440  # 24 hours
+
+  # If mode is "daily" or "weekly", reset at this UTC hour (0–23).
+  at_hour: 4
+
+# Group sessions by user? "true" = one session per user across all platforms.
+# "false" = one session per (user, platform) pair.
+group_sessions_per_user: true
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 24. PLATFORM TOOLSETS (What Tools Each Platform Can Access)
+# ─────────────────────────────────────────────────────────────────────────────
+# Maps platform (cli, telegram, discord) to available tools.
+# A tool NOT listed here is inaccessible from that platform.
+#
+# Security principle: Principle of Least Privilege — each platform gets
+# only the tools it actually needs.
+#
+platform_toolsets:
+  # CLI (local terminal / Hermes desktop app)
+  cli:
+    - browser           # Web fetch, screenshots
+    - clarify          # Ask for clarification (user I/O)
+    - code_execution   # Run Python, Node, etc.
+    - computer_use     # Desktop automation (mouse, keyboard)
+    - cronjob          # Schedule tasks
+    - delegation       # Hand off to other agents
+    - file             # Read/write files
+    - image_gen        # Generate images
+    - kanban           # Task queue
+    - memory           # Long-term memory
+    - session_search   # Search past sessions
+    - skills           # Skill management
+    - terminal         # Shell commands
+    - todo             # Task list
+    - tts              # Text-to-speech
+    - vision           # Image analysis
+    - web              # Web access (extended)
+
+  # Telegram platform (bot-mediated interaction)
+  telegram:
+    - browser
+    - clarify
+    - code_execution
+    - computer_use
+    - cronjob
+    - delegation
+    - file
+    - image_gen
+    - memory
+    - session_search
+    - skills
+    - terminal
+    - todo
+    - tts
+    - vision
+    - web
+
+  # Discord platform
+  discord:
+    - hermes-discord  # Discord-specific plugin toolset
+
+  # WhatsApp platform
+  whatsapp:
+    - hermes-whatsapp
+
+  # Slack platform
+  slack:
+    - hermes-slack
+
+  # Signal platform (privacy-focused)
+  signal:
+    - hermes-signal
+
+  # Home Assistant integration
+  homeassistant:
+    - hermes-homeassistant
+
+  # QQ Bot (Chinese platform)
+  qqbot:
+    - hermes-qqbot
+
+  # Yuanbao (Chinese platform)
+  yuanbao:
+    - hermes-yuanbao
+
+  # Microsoft Teams
+  teams:
+    - hermes-teams
+
+  # Google Chat
+  google_chat:
+    - hermes-google_chat
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 25. PLATFORM CONFIGURATION (Enabled Platforms & Home Channel)
+# ─────────────────────────────────────────────────────────────────────────────
+# Which messaging platforms Hermes listens on, and which is the "home"
+# (default/primary channel for announcements, logs, etc.).
+#
+platforms:
+  # Telegram: chat app, widely deployed.
+  telegram:
+    # Is Telegram active? "false" = Hermes ignores Telegram messages.
+    enabled: true
+
+    # Home channel: where announcements/errors go by default.
+    # Format: (platform, chat_id, name, user_id)
+    home_channel:
+      platform: telegram
+      chat_id: '5191016577'  # String, not int
+      name: Mahesh
+      user_id: '5191016577'
+
+  # Add more platforms by copying the structure above.
+  # discord, slack, whatsapp, signal, etc. all follow same pattern.
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 26. KNOWN TOOLSETS (Built-in & Plugin Tools)
+# ─────────────────────────────────────────────────────────────────────────────
+# Registry of tools available to Hermes. This is informational (documents
+# what tools CAN be exposed), combined with platform_toolsets to control
+# which tools ARE exposed per platform.
+#
+known_plugin_toolsets:
+  cli:
+    - a2a      # Air-to-air messaging
+    - spotify  # Spotify control
+
+  telegram:
+    - a2a
+    - spotify
+
+known_builtin_toolsets:
+  cli:
+    - browser
+    - clarify
+    - code_execution
+    - computer_use
+    - context_engine   # Internal context management
+    - cronjob
+    - delegation
+    - discord          # Discord control
+    - discord_admin    # Discord admin tools
+    - file
+    - homeassistant    # Home automation
+    - image_gen        # Image generation
+    - memory
+    - session_search
+    - skills
+    - spotify
+    - stt              # Speech-to-text
+    - terminal
+    - todo
+    - tts              # Text-to-speech
+    - video            # Video tools
+    - video_gen        # Video generation
+    - vision           # Image recognition
+    - web
+    - x_search         # Twitter/X search
+    - yuanbao          # Chinese platform
+
+  telegram:
+    - browser
+    - clarify
+    - code_execution
+    - computer_use
+    - context_engine
+    - cronjob
+    - delegation
+    - discord
+    - discord_admin
+    - file
+    - homeassistant
+    - image_gen
+    - memory
+    - session_search
+    - skills
+    - spotify
+    - stt
+    - terminal
+    - todo
+    - tts
+    - video
+    - video_gen
+    - vision
+    - web
+    - x_search
+    - yuanbao
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 27. MCP SERVERS (Model Context Protocol — External Tool Sources)
+# ─────────────────────────────────────────────────────────────────────────────
+# MCP servers expose external tools/data sources to Hermes. Each server
+# must be configured with auth, endpoint, and optional tool filters.
+#
+# How MCP works:
+#   1. MCP server exposes tools via JSON-RPC over stdio or HTTP.
+#   2. Hermes discovers tools on startup.
+#   3. Agent uses tools from MCP + built-ins as a unified toolset.
+#   4. Auth can be OAuth (user-managed), API key (env var), or none.
+#
+mcp_servers:
+  # HuggingFace hub integration (model search, downloads)
+  hugging_face:
+    url: https://huggingface.co/mcp
+    auth: oauth  # User must authorize once
+    enabled: true
+
+  # Postman API testing & documentation
+  postman:
+    url: https://mcp.postman.com/minimal
+    auth: oauth
+    enabled: false  # Optional, disabled by default
+
+  # Railway deployment platform
+  railway:
+    url: https://mcp.railway.com
+    auth: oauth
+    enabled: false
+    # Exclude specific tools from this server
+    tools:
+      exclude:
+        - railway-agent
+
+  # Supabase (PostgreSQL + realtime DB)
+  supabase:
+    url: https://mcp.supabase.com/mcp
+    auth: oauth
+    enabled: true
+
+  # Vercel deployment platform
+  vercel:
+    url: https://mcp.vercel.com
+    auth: oauth
+    enabled: false
+
+  # Calendly scheduling
+  calendly:
+    url: https://mcp.calendly.com
+    auth: oauth
+    enabled: true
+    tools:
+      exclude:
+        - list_calendly_skills  # Exclude noisy tools
+        - load_calendly_skill
+
+  # Canva design tool
+  canva:
+    url: https://mcp.canva.com/mcp
+    auth: oauth
+    enabled: true
+
+  # Notion database & document tool
+  notion:
+    url: https://mcp.notion.com/mcp
+    auth: oauth
+    enabled: true
+
+  # Figma design tool
+  figma:
+    url: https://mcp.figma.com/mcp
+    auth: oauth
+    enabled: true
+
+  # n8n workflow automation (local/self-hosted)
+  n8n:
+    # Command to run n8n MCP server
+    command: C:/Users/ELCOT/AppData/Local/hermes/mcp-installs/n8n/.venv/Scripts/python.exe
+    args:
+      - C:/Users/ELCOT/AppData/Local/hermes/mcp-installs/n8n/server.py
+    # Environment variables for the MCP server
+    env:
+      N8N_MCP_ENV: C:/Users/ELCOT/.config/n8n-mcp/env
+    # Timeout for MCP server startup (seconds)
+    timeout: 120
+    # Timeout for initial connection (seconds)
+    connect_timeout: 30
+    sampling:
+      enabled: false
+
+  # Zoho CRM (customer relationship management)
+  zoho_crm:
+    # Local MCP server script
+    command: /Users/apple/.hermes/hermes-agent/venv/bin/python
+    args:
+      - /Users/apple/.hermes/scripts/zoho_crm_mcp_server.py
+    # API token stored in env var (NOT in this file — see .env)
+    env:
+      ZOHO_CRM_ACCESS_TOKEN: FILL_FROM_.env
+    timeout: 60
+    connect_timeout: 30
+    sampling:
+      enabled: false
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# APPENDIX: OPTIONAL / COMMENTED SETTINGS
+# ═══════════════════════════════════════════════════════════════════════════════
+
+# ─────────────────────────────────────────────────────────────────────────────
+# A. SECURITY (Commented — Uncomment to Enable)
+# ─────────────────────────────────────────────────────────────────────────────
+# Automatic redaction of secrets (API keys, passwords, tokens) in logs
+# and responses. Enabled by default if not configured.
+#
+# security:
+#   # Redact secrets? (API keys, tokens, passwords)
+#   # "true" = mask before showing to user/model
+#   redact_secrets: true
+#
+#   # Use Tirith (static analysis tool) to scan code before execution?
+#   # Detects injection patterns, hardcoded creds, common vulns.
+#   tirith_enabled: true
+#   tirith_path: "tirith"        # Path to tirith binary
+#   tirith_timeout: 5            # Max seconds for scan
+#   tirith_fail_open: true       # Execute code even if Tirith scan fails?
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# B. FALLBACK MODEL (Commented — Uncomment to Enable Provider Failover)
+# ─────────────────────────────────────────────────────────────────────────────
+# If primary provider is down (rate limited, quota exceeded, etc.),
+# automatically fail over to another provider's model.
+#
+# Failover triggers:
+#   - 429 (rate limit)
+#   - 529 (provider overloaded)
+#   - 503 (service error)
+#   - Connection timeout
+#
+# Supported providers:
+#   - openrouter     (requires OPENROUTER_API_KEY env var)
+#   - openai-codex   (OAuth — Hermes auth)
+#   - nous           (OAuth — Hermes auth)
+#   - zai            (requires ZAI_API_KEY)
+#   - kimi-coding    (requires KIMI_API_KEY)
+#   - minimax        (requires MINIMAX_API_KEY)
+#   - bedrock        (AWS IAM)
+#
+# fallback_model:
+#   provider: openrouter
+#   model: anthropic/claude-sonnet-4
+#
+# For custom OpenAI-compatible endpoints:
+# fallback_model:
+#   provider: custom-openai
+#   base_url: https://your-api.example.com/v1
+#   model: gpt-4
+#   key_env: CUSTOM_OPENAI_API_KEY
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# SCHEMA VERSIONING
+# ═══════════════════════════════════════════════════════════════════════════════
+# This document describes schema version 40. When breaking changes happen,
+# the version increments. Hermes uses this to detect config drift and
+# guide migrations.
+#
+_config_version: 40

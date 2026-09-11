@@ -1,0 +1,411 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Office Context Schema",
+  "description": "Organization-level shared memory: company policies, compliance rules, infrastructure standards, and office-wide conventions. Accessible to all org-deployed agents with appropriate access controls.",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "default": "1.0.0"
+    },
+    "organization": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Organization legal/common name"
+        },
+        "environment": {
+          "type": "string",
+          "enum": ["prod", "staging", "test", "dev"],
+          "description": "Deployment environment"
+        },
+        "deployment_region": {
+          "type": "string",
+          "description": "Primary geographic region for compliance (e.g., 'US', 'EU', 'APAC')"
+        },
+        "industry_vertical": {
+          "type": "string",
+          "enum": [
+            "software",
+            "finance",
+            "healthcare",
+            "legal",
+            "ecommerce",
+            "consulting",
+            "other"
+          ],
+          "description": "Industry sector for compliance/standards context"
+        },
+        "compliance_frameworks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "GDPR",
+              "HIPAA",
+              "SOC2_TypeII",
+              "PCI_DSS",
+              "ISO27001",
+              "CCPA",
+              "none"
+            ]
+          },
+          "description": "Applicable compliance standards"
+        }
+      },
+      "required": ["name", "environment"]
+    },
+    "infrastructure_standards": {
+      "type": "object",
+      "properties": {
+        "primary_cloud_provider": {
+          "type": "string",
+          "enum": ["aws", "gcp", "azure", "on_premise", "hybrid"],
+          "description": "Primary infrastructure provider"
+        },
+        "supported_runtimes": {
+          "type": "array",
+          "items": { "type": "string" },
+          "examples": ["Python 3.11+", "Node.js 18+", "Go 1.21+"],
+          "description": "Approved runtime versions"
+        },
+        "database_engines": {
+          "type": "array",
+          "items": { "type": "string" },
+          "examples": ["PostgreSQL 14+", "MySQL 8+", "DynamoDB"],
+          "description": "Approved database systems"
+        },
+        "container_orchestration": {
+          "type": "string",
+          "enum": ["kubernetes", "docker_compose", "ecs", "none"],
+          "description": "Container management approach"
+        },
+        "logging_and_monitoring": {
+          "type": "object",
+          "properties": {
+            "log_aggregation": {
+              "type": "string",
+              "enum": ["splunk", "datadog", "elk", "cloudwatch", "other"],
+              "description": "Centralized logging platform"
+            },
+            "metrics_platform": {
+              "type": "string",
+              "enum": ["prometheus", "datadog", "cloudwatch", "newrelic", "other"],
+              "description": "Metrics collection system"
+            },
+            "apm_tool": {
+              "type": "string",
+              "enum": ["datadog", "newrelic", "dynatrace", "jaeger", "other"],
+              "description": "Application performance monitoring"
+            }
+          }
+        },
+        "default_regions": {
+          "type": "array",
+          "items": { "type": "string" },
+          "examples": ["us-east-1", "eu-west-1", "ap-southeast-1"],
+          "description": "Default deployment regions"
+        }
+      }
+    },
+    "security_policies": {
+      "type": "object",
+      "properties": {
+        "data_classification_levels": {
+          "type": "object",
+          "properties": {
+            "public": {
+              "type": "string",
+              "description": "Public/non-sensitive data"
+            },
+            "internal": {
+              "type": "string",
+              "description": "Internal company data"
+            },
+            "confidential": {
+              "type": "string",
+              "description": "Sensitive business data"
+            },
+            "restricted": {
+              "type": "string",
+              "description": "Highly restricted (financial, health, legal, etc.)"
+            }
+          }
+        },
+        "encryption_requirements": {
+          "type": "object",
+          "properties": {
+            "data_at_rest": {
+              "type": "string",
+              "enum": ["optional", "required", "required_with_hsm"],
+              "description": "Encryption for stored data"
+            },
+            "data_in_transit": {
+              "type": "string",
+              "enum": ["http_ok", "https_required", "tls13_required"],
+              "description": "Encryption for data in motion"
+            },
+            "tls_version_minimum": {
+              "type": "string",
+              "enum": ["1.2", "1.3"],
+              "default": "1.3",
+              "description": "Minimum TLS version"
+            },
+            "cipher_suites": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "Approved cipher suite list"
+            }
+          }
+        },
+        "access_control_model": {
+          "type": "string",
+          "enum": ["rbac", "abac", "zero_trust"],
+          "description": "Access control model in use"
+        },
+        "credential_management": {
+          "type": "object",
+          "properties": {
+            "secret_vault": {
+              "type": "string",
+              "enum": ["vault", "secrets_manager", "external_siem", "other"],
+              "description": "Secrets management system"
+            },
+            "rotation_policy": {
+              "type": "string",
+              "enum": ["30_days", "90_days", "annual", "on_demand"],
+              "description": "Credential rotation frequency"
+            },
+            "mfa_requirement": {
+              "type": "boolean",
+              "default": true,
+              "description": "Multi-factor auth mandatory"
+            },
+            "ssh_key_requirements": {
+              "type": "string",
+              "description": "SSH key management policy (e.g., 'Ed25519 4096-bit or stronger')"
+            }
+          }
+        },
+        "audit_and_logging": {
+          "type": "object",
+          "properties": {
+            "event_retention_years": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 10,
+              "description": "How long to retain audit logs"
+            },
+            "immutable_storage": {
+              "type": "boolean",
+              "default": true,
+              "description": "Logs stored immutably"
+            },
+            "siem_integration": {
+              "type": "boolean",
+              "default": true,
+              "description": "Logs sent to SIEM for analysis"
+            }
+          }
+        }
+      }
+    },
+    "coding_standards": {
+      "type": "object",
+      "properties": {
+        "code_review_requirement": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3,
+          "description": "Minimum number of approvals required for merge"
+        },
+        "test_coverage_minimum": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Minimum test coverage percentage"
+        },
+        "linting_enforcement": {
+          "type": "boolean",
+          "default": true,
+          "description": "Code linting required in CI"
+        },
+        "language_standards": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "version": {
+                "type": "string",
+                "description": "Language version constraint"
+              },
+              "style_guide": {
+                "type": "string",
+                "description": "Reference to style guide (e.g., 'PEP 8', 'AirBnB', 'Google')"
+              },
+              "formatter": {
+                "type": "string",
+                "description": "Automatic formatter (e.g., 'black', 'prettier', 'gofmt')"
+              }
+            }
+          },
+          "examples": {
+            "python": {
+              "version": "3.11+",
+              "style_guide": "PEP 8",
+              "formatter": "black"
+            },
+            "typescript": {
+              "version": "5.0+",
+              "style_guide": "AirBnB",
+              "formatter": "prettier"
+            }
+          }
+        },
+        "documentation_requirements": {
+          "type": "string",
+          "description": "Docstring/comment expectations"
+        }
+      }
+    },
+    "deployment_and_release": {
+      "type": "object",
+      "properties": {
+        "ci_cd_platform": {
+          "type": "string",
+          "enum": ["github_actions", "gitlab_ci", "jenkins", "circleci", "other"],
+          "description": "Primary CI/CD system"
+        },
+        "branching_strategy": {
+          "type": "string",
+          "enum": ["git_flow", "trunk_based", "github_flow"],
+          "description": "Git branching model"
+        },
+        "release_cadence": {
+          "type": "string",
+          "enum": ["continuous", "weekly", "biweekly", "monthly", "quarterly"],
+          "description": "Release frequency"
+        },
+        "change_advisory_board": {
+          "type": "boolean",
+          "description": "Requires CAB approval for prod changes"
+        },
+        "rollback_policy": {
+          "type": "string",
+          "description": "Rollback procedures and responsibilities"
+        },
+        "disaster_recovery": {
+          "type": "object",
+          "properties": {
+            "rto_minutes": {
+              "type": "integer",
+              "description": "Recovery Time Objective in minutes"
+            },
+            "rpo_minutes": {
+              "type": "integer",
+              "description": "Recovery Point Objective in minutes"
+            },
+            "dr_tested_frequency": {
+              "type": "string",
+              "enum": ["annually", "quarterly", "monthly"],
+              "description": "How often DR procedures are tested"
+            }
+          }
+        }
+      }
+    },
+    "office_wide_conventions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "convention_name": {
+            "type": "string",
+            "description": "Name/title of the convention"
+          },
+          "description": {
+            "type": "string",
+            "description": "What the convention covers"
+          },
+          "applies_to": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Teams/roles/projects this applies to"
+          },
+          "enforcement_level": {
+            "type": "string",
+            "enum": ["best_practice", "requirement", "mandatory"],
+            "description": "How strictly enforced"
+          }
+        },
+        "required": ["convention_name", "description", "enforcement_level"]
+      },
+      "examples": [
+        {
+          "convention_name": "Commit Message Format",
+          "description": "Use conventional commits: type(scope): subject line (max 72 chars)",
+          "applies_to": ["all_teams"],
+          "enforcement_level": "requirement"
+        },
+        {
+          "convention_name": "PR Deployment Protection",
+          "description": "Main branch requires 2 approvals + passing CI before merge",
+          "applies_to": ["engineering"],
+          "enforcement_level": "mandatory"
+        }
+      ]
+    },
+    "team_contacts_and_escalation": {
+      "type": "object",
+      "properties": {
+        "security_contact": {
+          "type": "string",
+          "description": "Email/Slack handle for security issues"
+        },
+        "ops_on_call": {
+          "type": "string",
+          "description": "On-call ops contact (PagerDuty URL or name)"
+        },
+        "incident_commander": {
+          "type": "string",
+          "description": "Escalation contact for production incidents"
+        },
+        "compliance_officer": {
+          "type": "string",
+          "description": "Compliance/legal contact"
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "last_updated": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "last_updated_by": {
+          "type": "string",
+          "description": "User/role that made last update"
+        },
+        "change_log_url": {
+          "type": "string",
+          "description": "Link to version control/change history"
+        },
+        "approval_required_for_changes": {
+          "type": "boolean",
+          "default": true,
+          "description": "Office context updates require approval"
+        }
+      }
+    }
+  },
+  "required": ["version", "organization", "infrastructure_standards"]
+}

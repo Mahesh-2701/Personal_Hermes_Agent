@@ -1,0 +1,321 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Hermes User Profile Schema",
+  "description": "User/office-context profile for preferences, communication style, role, and workspace expectations. Stored in USER.md. Portable template with no personal data.",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "default": "1.0.0"
+    },
+    "profile": {
+      "type": "object",
+      "properties": {
+        "user_identifier": {
+          "type": "string",
+          "description": "Generic user ID/role (e.g., 'office_admin', 'developer_team', 'product_manager')",
+          "pattern": "^[a-z_]+$"
+        },
+        "role_in_organization": {
+          "type": "string",
+          "enum": [
+            "admin",
+            "developer",
+            "manager",
+            "product_manager",
+            "security_officer",
+            "ops_engineer",
+            "devops",
+            "analyst",
+            "other"
+          ],
+          "description": "Organizational role (office context, not personal)"
+        },
+        "team_or_department": {
+          "type": "string",
+          "description": "Team affiliation (e.g., 'Engineering', 'Product', 'DevOps')"
+        },
+        "timezone": {
+          "type": "string",
+          "format": "tz-database-id",
+          "description": "IANA timezone (e.g., 'UTC', 'America/Los_Angeles', 'Europe/London')"
+        },
+        "working_hours": {
+          "type": "object",
+          "properties": {
+            "start_hour": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 23
+            },
+            "end_hour": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 23
+            },
+            "working_days": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
+              }
+            }
+          },
+          "description": "Office working hours and days"
+        }
+      },
+      "required": ["user_identifier", "role_in_organization", "timezone"]
+    },
+    "communication_preferences": {
+      "type": "object",
+      "properties": {
+        "verbosity": {
+          "type": "string",
+          "enum": ["terse", "concise", "detailed", "educational"],
+          "default": "concise",
+          "description": "Preferred response length and detail level"
+        },
+        "format_preference": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["plain_text", "markdown", "bullet_points", "code_snippets", "diagrams"]
+          },
+          "description": "Preferred response formats"
+        },
+        "tone": {
+          "type": "string",
+          "enum": ["formal", "professional", "casual", "friendly"],
+          "default": "professional",
+          "description": "Preferred communication tone"
+        },
+        "code_explanation_level": {
+          "type": "string",
+          "enum": ["minimal", "standard", "detailed", "educational"],
+          "default": "standard",
+          "description": "How much to explain code examples"
+        },
+        "prefers_examples": {
+          "type": "boolean",
+          "default": true,
+          "description": "Include concrete examples in responses"
+        },
+        "async_vs_realtime": {
+          "type": "string",
+          "enum": ["async_preferred", "realtime_preferred", "no_preference"],
+          "default": "async_preferred",
+          "description": "Response timing preference"
+        }
+      },
+      "required": ["verbosity", "tone"]
+    },
+    "technical_profile": {
+      "type": "object",
+      "properties": {
+        "primary_languages": {
+          "type": "array",
+          "items": { "type": "string" },
+          "examples": ["Python", "TypeScript", "Go", "Rust"],
+          "description": "Main programming languages used"
+        },
+        "frameworks_and_tools": {
+          "type": "array",
+          "items": { "type": "string" },
+          "examples": ["React", "FastAPI", "Kubernetes", "Terraform"],
+          "description": "Key frameworks and tools in daily use"
+        },
+        "experience_level": {
+          "type": "string",
+          "enum": ["junior", "mid", "senior", "staff"],
+          "description": "Career level for context depth"
+        },
+        "learning_style": {
+          "type": "string",
+          "enum": ["hands_on", "theoretical", "documentation_first", "mixed"],
+          "default": "mixed",
+          "description": "How user prefers to learn new topics"
+        },
+        "problem_solving_style": {
+          "type": "string",
+          "enum": ["quick_iterative", "planning_first", "experimental", "systematic"],
+          "description": "Preferred approach to tackling problems"
+        },
+        "security_consciousness": {
+          "type": "string",
+          "enum": ["baseline", "standard", "high", "paranoid"],
+          "default": "standard",
+          "description": "Security awareness level for recommendations"
+        }
+      },
+      "required": ["primary_languages", "experience_level"]
+    },
+    "workspace_environment": {
+      "type": "object",
+      "properties": {
+        "primary_os": {
+          "type": "string",
+          "enum": ["windows", "macos", "linux"],
+          "description": "Primary operating system"
+        },
+        "terminal_shell": {
+          "type": "string",
+          "enum": ["bash", "zsh", "fish", "powershell", "other"],
+          "description": "Preferred shell"
+        },
+        "preferred_editor": {
+          "type": "string",
+          "enum": ["vscode", "vim", "neovim", "emacs", "jetbrains", "other"],
+          "description": "Primary code editor"
+        },
+        "ci_cd_platform": {
+          "type": "string",
+          "enum": ["github_actions", "gitlab_ci", "jenkins", "circleci", "other"],
+          "description": "Primary CI/CD system"
+        },
+        "containerization": {
+          "type": "string",
+          "enum": ["docker", "podman", "none"],
+          "description": "Container runtime used"
+        },
+        "communication_platforms": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["slack", "discord", "teams", "telegram", "other"]
+          },
+          "description": "Messaging platforms available"
+        }
+      }
+    },
+    "workflow_habits": {
+      "type": "object",
+      "properties": {
+        "code_review_expectations": {
+          "type": "string",
+          "description": "PR review preferences and turnaround expectations"
+        },
+        "testing_rigor": {
+          "type": "string",
+          "enum": ["minimal", "standard", "comprehensive", "test_first"],
+          "default": "standard",
+          "description": "Testing expectations and practices"
+        },
+        "documentation_preference": {
+          "type": "string",
+          "enum": ["minimal", "standard", "comprehensive", "docstring_heavy"],
+          "default": "standard",
+          "description": "Documentation level preferred"
+        },
+        "agile_cadence": {
+          "type": "string",
+          "enum": ["weekly", "biweekly", "monthly", "ad_hoc"],
+          "description": "Sprint/planning cycle"
+        },
+        "meeting_preferences": {
+          "type": "string",
+          "description": "When/how often synchronous check-ins preferred"
+        }
+      }
+    },
+    "constraints_and_policies": {
+      "type": "object",
+      "properties": {
+        "cannot_use": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Tools, languages, or approaches to avoid",
+          "examples": ["sudo", "eval", "deprecated_library"]
+        },
+        "must_follow": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Mandatory practices or compliance rules",
+          "examples": ["GDPR compliance", "SOC 2 Type II", "security review before deployment"]
+        },
+        "approval_gating": {
+          "type": "object",
+          "properties": {
+            "production_changes": {
+              "type": "boolean",
+              "description": "Require approval for production deployments"
+            },
+            "memory_writes": {
+              "type": "boolean",
+              "description": "Require approval for agent memory updates"
+            },
+            "infrastructure_changes": {
+              "type": "boolean",
+              "description": "Require approval for infra modifications"
+            },
+            "security_sensitive": {
+              "type": "boolean",
+              "description": "Require approval for security-related changes"
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "last_updated": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "total_chars": {
+          "type": "integer",
+          "maximum": 1375
+        },
+        "usage_percent": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        }
+      }
+    }
+  },
+  "required": ["version", "profile", "communication_preferences"],
+  "example": {
+    "version": "1.0.0",
+    "profile": {
+      "user_identifier": "engineering_team",
+      "role_in_organization": "developer",
+      "team_or_department": "Backend Engineering",
+      "timezone": "UTC",
+      "working_hours": {
+        "start_hour": 9,
+        "end_hour": 17,
+        "working_days": ["mon", "tue", "wed", "thu", "fri"]
+      }
+    },
+    "communication_preferences": {
+      "verbosity": "concise",
+      "format_preference": ["markdown", "code_snippets"],
+      "tone": "professional",
+      "code_explanation_level": "standard",
+      "prefers_examples": true,
+      "async_vs_realtime": "async_preferred"
+    },
+    "technical_profile": {
+      "primary_languages": ["Python", "TypeScript"],
+      "frameworks_and_tools": ["FastAPI", "React", "PostgreSQL", "Kubernetes"],
+      "experience_level": "senior",
+      "learning_style": "hands_on",
+      "problem_solving_style": "systematic",
+      "security_consciousness": "high"
+    },
+    "workspace_environment": {
+      "primary_os": "linux",
+      "terminal_shell": "zsh",
+      "preferred_editor": "vscode",
+      "ci_cd_platform": "github_actions",
+      "containerization": "docker",
+      "communication_platforms": ["slack", "teams"]
+    }
+  }
+}
