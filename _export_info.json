@@ -1,0 +1,15 @@
+{
+  "export_complete": true,
+  "skills_count": 14,
+  "profiles_count": 4,
+  "mcp_servers_count": 13,
+  "cron_jobs_count": 2,
+  "scripts_count": 1,
+  "memory_files_count": 2,
+  "hermes_version": "0.21.0",
+  "config_version": 39,
+  "export_timestamp": "2026-09-02T06:59:00+00:00",
+  "required_env_vars_count": 1,
+  "required_env_vars": ["GITHUB_PERSONAL_ACCESS_TOKEN"],
+  "total_files_in_export": "see manifest.json for detail"
+}
